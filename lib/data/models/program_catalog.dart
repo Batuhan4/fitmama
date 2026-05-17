@@ -495,6 +495,18 @@ const kProgramCatalog = <ProgramDefinition>[
           ExerciseStep(name: 'Kegel (yavaş)', seconds: 30, sets: 3, restSec: 15),
           ExerciseStep(name: 'Pelvik Tilt', seconds: 30, sets: 3, restSec: 15),
           ExerciseStep(name: 'Bridge Hold', seconds: 30, sets: 2, restSec: 15),
+          ExerciseStep(
+              name: 'Cat-Cow',
+              seconds: 45,
+              sets: 2,
+              restSec: 15,
+              sub: 'Omurgayı yumuşat.'),
+          ExerciseStep(
+              name: 'Diyafram Nefesi',
+              seconds: 60,
+              sets: 2,
+              restSec: 10,
+              sub: 'Burun → 4 sn, ağız → 6 sn.'),
         ],
       ),
       ProgramLevelDef(
@@ -506,6 +518,16 @@ const kProgramCatalog = <ProgramDefinition>[
           ExerciseStep(name: 'Quick Kegel', seconds: 20, sets: 3, restSec: 20),
           ExerciseStep(name: 'Glute Bridge + Kegel', seconds: 40, sets: 3, restSec: 15),
           ExerciseStep(name: 'Heel Slide + Breath', seconds: 35, sets: 2, restSec: 15),
+          ExerciseStep(
+              name: 'Dead Bug (yumuşak)',
+              seconds: 35,
+              sets: 3,
+              restSec: 20),
+          ExerciseStep(
+              name: 'Standing Pelvic Tilt',
+              seconds: 30,
+              sets: 3,
+              restSec: 15),
         ],
       ),
       ProgramLevelDef(
@@ -517,6 +539,16 @@ const kProgramCatalog = <ProgramDefinition>[
           ExerciseStep(name: 'Bird Dog + Kegel', seconds: 40, sets: 3, restSec: 20),
           ExerciseStep(name: 'Side-Lying Clam', seconds: 30, sets: 3, restSec: 15),
           ExerciseStep(name: 'Pelvic Rocking', seconds: 40, sets: 2, restSec: 15),
+          ExerciseStep(
+              name: 'Standing Knee Drive',
+              seconds: 35,
+              sets: 3,
+              restSec: 20),
+          ExerciseStep(
+              name: 'Wall Sit + Breath',
+              seconds: 30,
+              sets: 3,
+              restSec: 25),
         ],
       ),
       ProgramLevelDef(
@@ -528,6 +560,17 @@ const kProgramCatalog = <ProgramDefinition>[
           ExerciseStep(name: 'Single-Leg Bridge + Kegel', seconds: 40, sets: 3, restSec: 20),
           ExerciseStep(name: 'Step-Up + Kegel', seconds: 45, sets: 3, restSec: 25),
           ExerciseStep(name: 'Long Kegel Hold', seconds: 30, sets: 4, restSec: 20),
+          ExerciseStep(
+              name: 'Pulse Kegel',
+              seconds: 25,
+              sets: 4,
+              restSec: 15,
+              sub: '1 sn kasıl, 1 sn bırak.'),
+          ExerciseStep(
+              name: 'Bridge March',
+              seconds: 40,
+              sets: 3,
+              restSec: 20),
           ExerciseStep(name: 'Cool-down Breath', seconds: 90, sets: 1, restSec: 0),
         ],
       ),
@@ -655,9 +698,36 @@ const kProgramCatalog = <ProgramDefinition>[
         name: 'Hafta 1 · Tempo bul',
         tagline: 'Aralıklı sakin yürüyüş.',
         exercises: [
-          ExerciseStep(name: 'Isınma yürüyüş', seconds: 180, sets: 1, restSec: 0),
-          ExerciseStep(name: 'Sakin tempo', seconds: 240, sets: 3, restSec: 30),
+          ExerciseStep(
+              name: 'Isınma yürüyüş',
+              seconds: 180,
+              sets: 1,
+              restSec: 0,
+              sub: '3 dakika sakin tempo.'),
+          ExerciseStep(
+              name: 'Postür hizalama',
+              seconds: 30,
+              sets: 2,
+              restSec: 15,
+              sub: 'Karın aktif, kollar dik.'),
+          ExerciseStep(
+              name: 'Sakin tempo',
+              seconds: 240,
+              sets: 3,
+              restSec: 30,
+              sub: 'Nefes düzeni: 3 adım al, 3 adım ver.'),
+          ExerciseStep(
+              name: 'Dinamik esneme',
+              seconds: 45,
+              sets: 2,
+              restSec: 15,
+              sub: 'Diz çekme + topuk vurma.'),
           ExerciseStep(name: 'Soğuma yürüyüş', seconds: 180, sets: 1, restSec: 0),
+          ExerciseStep(
+              name: 'Statik baldır esnetme',
+              seconds: 30,
+              sets: 2,
+              restSec: 10),
         ],
       ),
       ProgramLevelDef(
@@ -666,7 +736,25 @@ const kProgramCatalog = <ProgramDefinition>[
         tagline: 'Tempo artır, dinlen, tekrarla.',
         exercises: [
           ExerciseStep(name: 'Isınma', seconds: 180, sets: 1, restSec: 0),
-          ExerciseStep(name: 'Hızlı tempo', seconds: 120, sets: 4, restSec: 60, sub: '4 dk hızlı, 1 dk sakin.'),
+          ExerciseStep(
+              name: 'Hızlı tempo',
+              seconds: 120,
+              sets: 4,
+              restSec: 60,
+              sub: '2 dk hızlı, 1 dk sakin.'),
+          ExerciseStep(
+              name: 'Topuk-burun yürüyüş',
+              seconds: 45,
+              sets: 3,
+              restSec: 20,
+              sub: 'Denge için.'),
+          ExerciseStep(
+              name: 'Yan yürüyüş',
+              seconds: 30,
+              sets: 3,
+              restSec: 15,
+              sub: 'Glute aktivasyon.'),
+          ExerciseStep(name: 'Düz tempo', seconds: 180, sets: 2, restSec: 30),
           ExerciseStep(name: 'Soğuma', seconds: 180, sets: 1, restSec: 0),
         ],
       ),
@@ -676,8 +764,29 @@ const kProgramCatalog = <ProgramDefinition>[
         tagline: 'Yokuş veya treadmill eğim.',
         exercises: [
           ExerciseStep(name: 'Isınma', seconds: 180, sets: 1, restSec: 0),
-          ExerciseStep(name: 'Yokuş yukarı', seconds: 180, sets: 4, restSec: 60),
-          ExerciseStep(name: 'Düz tempo', seconds: 120, sets: 2, restSec: 30),
+          ExerciseStep(
+              name: 'Yokuş yukarı',
+              seconds: 180,
+              sets: 4,
+              restSec: 60,
+              sub: '%5-8 eğim hedefle.'),
+          ExerciseStep(
+              name: 'Düz tempo',
+              seconds: 120,
+              sets: 2,
+              restSec: 30,
+              sub: 'Nabızı düşürme arası.'),
+          ExerciseStep(
+              name: 'Yokuş aşağı kontrol',
+              seconds: 90,
+              sets: 2,
+              restSec: 30,
+              sub: 'Diz hafif bükük, küçük adımlar.'),
+          ExerciseStep(
+              name: 'Sürat yürüyüş',
+              seconds: 60,
+              sets: 3,
+              restSec: 30),
           ExerciseStep(name: 'Soğuma', seconds: 180, sets: 1, restSec: 0),
         ],
       ),
@@ -687,8 +796,35 @@ const kProgramCatalog = <ProgramDefinition>[
         tagline: 'Tempo + kol + nefes.',
         exercises: [
           ExerciseStep(name: 'Isınma', seconds: 180, sets: 1, restSec: 0),
-          ExerciseStep(name: 'Power Walk + kol', seconds: 240, sets: 4, restSec: 60),
-          ExerciseStep(name: 'Knee Lift Walk', seconds: 60, sets: 3, restSec: 30),
+          ExerciseStep(
+              name: 'Power Walk + kol',
+              seconds: 240,
+              sets: 4,
+              restSec: 60,
+              sub: 'Kol salınımı 90 derece, karın aktif.'),
+          ExerciseStep(
+              name: 'Knee Lift Walk',
+              seconds: 60,
+              sets: 3,
+              restSec: 30,
+              sub: 'Dizi göğse doğru çek.'),
+          ExerciseStep(
+              name: 'Side Step',
+              seconds: 45,
+              sets: 3,
+              restSec: 20,
+              sub: 'Mini band varsa eklenir.'),
+          ExerciseStep(
+              name: 'Sprint sürüş',
+              seconds: 30,
+              sets: 4,
+              restSec: 60,
+              sub: 'Maksimumun %85\'i.'),
+          ExerciseStep(
+              name: 'Tempo finiş',
+              seconds: 120,
+              sets: 2,
+              restSec: 30),
           ExerciseStep(name: 'Soğuma stretch', seconds: 180, sets: 1, restSec: 0),
         ],
       ),
