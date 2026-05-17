@@ -9,7 +9,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../data/services/auth_service.dart';
 import '../../../data/services/cloud_sync_service.dart';
 import '../../../l10n/generated/app_localizations.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key, required this.repository});
@@ -131,9 +131,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   children: [
                     Center(
                       child: Image.asset(
-                        'assets/branding/momrise_logo_square.png',
-                        width: 140,
-                        height: 140,
+                        'assets/branding/fitmama_logo.png',
+                        height: 120,
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -191,7 +190,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                     ],
                     if (!_busy && _showPartner)
-                      MomriseCard(
+                      FitmamaCard(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
@@ -298,7 +297,7 @@ class _RoleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return MomriseCard(
+    return FitmamaCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
