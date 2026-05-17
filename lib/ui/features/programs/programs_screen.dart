@@ -99,8 +99,144 @@ class _ProgramsScreenState extends State<ProgramsScreen> {
             cta: t.progAiCta,
           ),
         ),
+        const SizedBox(height: 24),
+        SectionHeader(
+          title: 'TÜM PROGRAMLAR',
+          upper: true,
+          trailingLabel: 'Listele',
+          onTrailingTap: () => context.push('/programs/list'),
+        ),
+        _AllProgramsList(repository: widget.repository),
         const SizedBox(height: 28),
       ],
+    );
+  }
+}
+
+class _AllProgramsList extends StatelessWidget {
+  const _AllProgramsList({required this.repository});
+  final AppRepository repository;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListenableBuilder(
+      listenable: repository,
+      builder: (_, _) => ListView.separated(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        itemCount: kProgramCatalog.length,
+        separatorBuilder: (_, _) => const SizedBox(height: 10),
+        itemBuilder: (_, i) {
+          final p = kProgramCatalog[i];
+          final progress = repository.progressFor(p.id);
+          final total = p.levels.length;
+          final done = progress.completedLevels.length;
+          final pct = total == 0 ? 0.0 : done / total;
+          final totalMins =
+              p.levels.fold<int>(0, (a, l) => a + l.estimatedMinutes);
+          return FitmamaCard(
+            padding: const EdgeInsets.all(12),
+            onTap: () => context.push(
+                '/programs/${p.id}?title=${Uri.encodeComponent(p.title)}'),
+            child: Row(
+              children: [
+                Container(
+                  width: 56,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    gradient: LinearGradient(
+                      colors: [
+                        AppPalette.primary.withValues(alpha: 0.6),
+                        AppPalette.accentPurple.withValues(alpha: 0.5),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    '${i + 1}',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(p.title,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w800, fontSize: 14)),
+                      const SizedBox(height: 2),
+                      Text(
+                        '$total seviye · ~$totalMins dk toplam',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 5,
+                                  decoration: BoxDecoration(
+                                    color: AppPalette.primary
+                                        .withValues(alpha: 0.16),
+                                    borderRadius:
+                                        BorderRadius.circular(99),
+                                  ),
+                                ),
+                                FractionallySizedBox(
+                                  widthFactor: pct.clamp(0.0, 1.0),
+                                  child: Container(
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                      color: AppPalette.primary,
+                                      borderRadius:
+                                          BorderRadius.circular(99),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Text(
+                            done == 0 ? 'Yeni' : '$done/$total',
+                            style: const TextStyle(
+                              color: AppPalette.primary,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 11,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Container(
+                  width: 36,
+                  height: 36,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppPalette.primary,
+                  ),
+                  child: const Icon(Icons.arrow_forward_rounded,
+                      color: Colors.white, size: 18),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
