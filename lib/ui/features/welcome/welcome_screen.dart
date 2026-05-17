@@ -131,8 +131,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   children: [
                     Center(
                       child: Image.asset(
-                        'assets/branding/fitmama_logo.png',
-                        height: 120,
+                        'assets/branding/fitmama_icon_splash.png',
+                        height: 160,
                         fit: BoxFit.contain,
                       ),
                     ),

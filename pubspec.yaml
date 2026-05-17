@@ -43,6 +43,9 @@ flutter:
   assets:
     - assets/branding/fitmama_logo_square.png
     - assets/branding/fitmama_logo.png
+    - assets/branding/fitmama_icon_legacy.png
+    - assets/branding/fitmama_icon_foreground.png
+    - assets/branding/fitmama_icon_splash.png
     - assets/images/meals/
     - assets/images/workouts/
     - assets/images/programs/
