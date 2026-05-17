@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 
 import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
-import '../../core/widgets/chatbot_bubble.dart';
-import 'top_bar.dart';
 
+/// FitMama 5-tab shell. Tabs: Ana Sayfa, Programlar, Beslenme, İstatistikler,
+/// Profil. Each screen owns its own header (logo / search / actions).
 class AppShellScaffold extends StatelessWidget {
   const AppShellScaffold({
     super.key,
@@ -19,11 +19,28 @@ class AppShellScaffold extends StatelessWidget {
   final String location;
 
   static const _tabs = <_BottomTab>[
-    _BottomTab('/dashboard', Icons.home_rounded, _LabelKey.dashboard),
-    _BottomTab('/feeding', Icons.child_friendly_rounded, _LabelKey.feeding),
-    _BottomTab('/mood', Icons.sentiment_satisfied_rounded, _LabelKey.mood),
-    _BottomTab('/progress', Icons.bar_chart_rounded, _LabelKey.progress),
-    _BottomTab('/exercise', Icons.fitness_center_rounded, _LabelKey.exercise),
+    _BottomTab('/home', Icons.home_outlined, Icons.home_rounded,
+        _LabelKey.home),
+    _BottomTab(
+        '/programs',
+        Icons.calendar_today_outlined,
+        Icons.calendar_today_rounded,
+        _LabelKey.programs),
+    _BottomTab(
+        '/nutrition',
+        Icons.restaurant_outlined,
+        Icons.restaurant_rounded,
+        _LabelKey.nutrition),
+    _BottomTab(
+        '/stats',
+        Icons.bar_chart_outlined,
+        Icons.bar_chart_rounded,
+        _LabelKey.stats),
+    _BottomTab(
+        '/profile',
+        Icons.person_outline_rounded,
+        Icons.person_rounded,
+        _LabelKey.profile),
   ];
 
   int get _currentIndex {
@@ -37,103 +54,83 @@ class AppShellScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context);
-    final showSettings = location == '/dashboard';
+    final scheme = Theme.of(context).colorScheme;
+    final selected = _currentIndex;
     return Scaffold(
-      appBar: MomriseTopBar(
-        repository: repository,
-        title: _titleFor(location, t),
-        showSettings: showSettings,
-      ),
-      body: ChatbotOverlay(
+      body: child,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: scheme.surface,
+          border: Border(
+            top: BorderSide(color: scheme.outline, width: 1),
+          ),
+        ),
         child: SafeArea(
           top: false,
-          bottom: false,
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 600),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: child,
-              ),
+          child: SizedBox(
+            height: 64,
+            child: Row(
+              children: List.generate(_tabs.length, (i) {
+                final tab = _tabs[i];
+                final isSelected = i == selected;
+                return Expanded(
+                  child: InkWell(
+                    onTap: () => context.go(tab.path),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          isSelected ? tab.iconActive : tab.icon,
+                          size: 24,
+                          color: isSelected
+                              ? scheme.primary
+                              : scheme.onSurfaceVariant,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          _label(tab.label, t),
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            color: isSelected
+                                ? scheme.primary
+                                : scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
             ),
           ),
         ),
-      ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _currentIndex,
-        onDestinationSelected: (i) {
-          context.go(_tabs[i].path);
-        },
-        destinations: _tabs
-            .map((tab) => NavigationDestination(
-                  icon: Icon(tab.icon),
-                  label: _label(tab.label, t),
-                ))
-            .toList(),
       ),
     );
   }
 
   static String _label(_LabelKey key, AppLocalizations t) {
     switch (key) {
-      case _LabelKey.dashboard:
-        return t.navDashboard;
-      case _LabelKey.feeding:
-        return t.navFeeding;
-      case _LabelKey.mood:
-        return t.navMood;
-      case _LabelKey.progress:
-        return t.navProgress;
-      case _LabelKey.exercise:
-        return t.navExercise;
-    }
-  }
-
-  static String? _titleFor(String location, AppLocalizations t) {
-    switch (location) {
-      case '/dashboard':
-        return null;
-      case '/feeding':
-        return t.feedTitle;
-      case '/mood':
-        return t.moodTitle;
-      case '/sleep':
-        return t.sleepTitle;
-      case '/exercise':
-        return t.exTitle;
-      case '/breathing':
-        return t.breathTitle;
-      case '/nutrition':
-        return t.nutTitle;
-      case '/videos':
-        return t.vidTitle;
-      case '/community':
-        return t.comTitle;
-      case '/progress':
-        return t.progTitle;
-      case '/reminders':
-        return t.remTitle;
-      case '/settings':
-        return t.setTitle;
-      case '/more':
-        return t.navMore;
-      case '/recovery':
-        return t.recoveryTitle;
-      case '/milestones':
-        return t.milestoneTitle;
-      case '/kegel':
-        return t.kegelTitle;
-      default:
-        return null;
+      case _LabelKey.home:
+        return t.tabHome;
+      case _LabelKey.programs:
+        return t.tabPrograms;
+      case _LabelKey.nutrition:
+        return t.tabNutrition;
+      case _LabelKey.stats:
+        return t.tabStats;
+      case _LabelKey.profile:
+        return t.tabProfile;
     }
   }
 }
 
 class _BottomTab {
-  const _BottomTab(this.path, this.icon, this.label);
+  const _BottomTab(this.path, this.icon, this.iconActive, this.label);
   final String path;
   final IconData icon;
+  final IconData iconActive;
   final _LabelKey label;
 }
 
-enum _LabelKey { dashboard, feeding, mood, progress, exercise }
+enum _LabelKey { home, programs, nutrition, stats, profile }
