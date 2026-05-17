@@ -1,5 +1,5 @@
-name: momrise
-description: "Postpartum support companion for new mothers"
+name: fitmama
+description: "FitMama — kadına özel postpartum fitness & wellness companion"
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -16,7 +16,6 @@ dependencies:
   go_router: ^14.6.2
   shared_preferences: ^2.3.3
   intl: any
-  google_fonts: ^6.2.1
   fl_chart: ^0.69.2
   uuid: ^4.5.1
   url_launcher: ^6.3.1
@@ -42,4 +41,38 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
-    - assets/branding/momrise_logo_square.png
+    - assets/branding/fitmama_logo_square.png
+    - assets/branding/fitmama_logo.png
+    - assets/images/meals/
+    - assets/images/workouts/
+    - assets/images/programs/
+    - assets/images/discover/
+    - assets/images/transformations/
+  # SF Pro font registration — Apple lisanslı, ücretsiz indirip
+  # assets/fonts/ altına koy. Dosyaları yerleştirdikten sonra aşağıdaki
+  # `fonts:` bloğunu uncomment et. Detay: assets/fonts/README.md.
+  # fonts:
+  #   - family: SF Pro Display
+  #     fonts:
+  #       - asset: assets/fonts/SF-Pro-Display-Regular.otf
+  #         weight: 400
+  #       - asset: assets/fonts/SF-Pro-Display-Medium.otf
+  #         weight: 500
+  #       - asset: assets/fonts/SF-Pro-Display-Semibold.otf
+  #         weight: 600
+  #       - asset: assets/fonts/SF-Pro-Display-Bold.otf
+  #         weight: 700
+  #       - asset: assets/fonts/SF-Pro-Display-Heavy.otf
+  #         weight: 800
+  #       - asset: assets/fonts/SF-Pro-Display-Black.otf
+  #         weight: 900
+  #   - family: SF Pro Text
+  #     fonts:
+  #       - asset: assets/fonts/SF-Pro-Text-Regular.otf
+  #         weight: 400
+  #       - asset: assets/fonts/SF-Pro-Text-Medium.otf
+  #         weight: 500
+  #       - asset: assets/fonts/SF-Pro-Text-Semibold.otf
+  #         weight: 600
+  #       - asset: assets/fonts/SF-Pro-Text-Bold.otf
+  #         weight: 700
