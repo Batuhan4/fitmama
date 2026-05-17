@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/data/models/feeding_entry.dart';
+import 'package:fitmama/data/models/feeding_entry.dart';
 
 void main() {
   test('FeedingEntry round-trips for breast feeding', () {

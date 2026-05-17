@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/ui/features/dashboard/water_quick_widget.dart';
-import 'package:momrise/utils/date_utils.dart';
+import 'package:fitmama/ui/features/dashboard/water_quick_widget.dart';
+import 'package:fitmama/utils/date_utils.dart';
 
 import 'test_harness.dart';
 

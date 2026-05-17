@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/data/models/profile.dart';
-import 'package:momrise/ui/features/milestones/baby_milestones_screen.dart';
-import 'package:momrise/ui/features/milestones/recovery_timeline_screen.dart';
+import 'package:fitmama/data/models/profile.dart';
+import 'package:fitmama/ui/features/milestones/baby_milestones_screen.dart';
+import 'package:fitmama/ui/features/milestones/recovery_timeline_screen.dart';
 
 import 'test_harness.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/data/models/sleep_entry.dart';
+import 'package:fitmama/data/models/sleep_entry.dart';
 
 void main() {
   test('SleepEntry computes duration in minutes', () {

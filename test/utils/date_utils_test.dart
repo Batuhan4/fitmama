@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/utils/date_utils.dart';
+import 'package:fitmama/utils/date_utils.dart';
 
 void main() {
   test('todayKey returns ISO-8601 date for given time', () {

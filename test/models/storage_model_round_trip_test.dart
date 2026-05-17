@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/data/models/exercise_session.dart';
-import 'package:momrise/data/models/meal_entry.dart';
-import 'package:momrise/data/models/reminder_config.dart';
-import 'package:momrise/data/models/water_entry.dart';
-import 'package:momrise/data/models/weight_entry.dart';
+import 'package:fitmama/data/models/exercise_session.dart';
+import 'package:fitmama/data/models/meal_entry.dart';
+import 'package:fitmama/data/models/reminder_config.dart';
+import 'package:fitmama/data/models/water_entry.dart';
+import 'package:fitmama/data/models/weight_entry.dart';
 
 void main() {
   test('ExerciseSession round-trips', () {

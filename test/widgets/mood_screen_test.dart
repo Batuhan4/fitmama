@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/data/models/mood_entry.dart';
-import 'package:momrise/ui/features/mood/mood_screen.dart';
+import 'package:fitmama/data/models/mood_entry.dart';
+import 'package:fitmama/ui/features/mood/mood_screen.dart';
 
 import 'test_harness.dart';
 

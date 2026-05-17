@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/data/repositories/app_repository.dart';
-import 'package:momrise/data/services/storage_service.dart';
-import 'package:momrise/l10n/generated/app_localizations.dart';
-import 'package:momrise/ui/core/theme/app_theme.dart';
+import 'package:fitmama/data/repositories/app_repository.dart';
+import 'package:fitmama/data/services/storage_service.dart';
+import 'package:fitmama/l10n/generated/app_localizations.dart';
+import 'package:fitmama/ui/core/theme/app_theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<AppRepository> bootRepository([Map<String, Object>? seed]) async {

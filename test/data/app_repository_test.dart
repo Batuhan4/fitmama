@@ -1,15 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:momrise/data/models/exercise_session.dart';
-import 'package:momrise/data/models/feeding_entry.dart';
-import 'package:momrise/data/models/meal_entry.dart';
-import 'package:momrise/data/models/mood_entry.dart';
-import 'package:momrise/data/models/profile.dart';
-import 'package:momrise/data/models/reminder_config.dart';
-import 'package:momrise/data/models/sleep_entry.dart';
-import 'package:momrise/data/models/user_role.dart';
-import 'package:momrise/data/models/weight_entry.dart';
-import 'package:momrise/data/repositories/app_repository.dart';
-import 'package:momrise/data/services/storage_service.dart';
+import 'package:fitmama/data/models/exercise_session.dart';
+import 'package:fitmama/data/models/feeding_entry.dart';
+import 'package:fitmama/data/models/meal_entry.dart';
+import 'package:fitmama/data/models/mood_entry.dart';
+import 'package:fitmama/data/models/profile.dart';
+import 'package:fitmama/data/models/reminder_config.dart';
+import 'package:fitmama/data/models/sleep_entry.dart';
+import 'package:fitmama/data/models/user_role.dart';
+import 'package:fitmama/data/models/weight_entry.dart';
+import 'package:fitmama/data/repositories/app_repository.dart';
+import 'package:fitmama/data/services/storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<AppRepository> _makeRepo([Map<String, Object>? seed]) async {
