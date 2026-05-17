@@ -6,7 +6,7 @@ import '../../../data/models/mood_entry.dart';
 import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 import 'recommendations.dart';
 import 'water_quick_widget.dart';
 
@@ -176,7 +176,7 @@ class DashboardScreen extends StatelessWidget {
         const SizedBox(height: 12),
         Recommendations(repository: repository),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

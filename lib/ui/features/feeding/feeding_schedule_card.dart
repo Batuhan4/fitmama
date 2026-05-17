@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../data/repositories/app_repository.dart';
 import '../../../data/services/feeding_schedule.dart';
 import '../../../utils/localized.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 const _scheduleTitle = L(
   'Beslenme programı',
@@ -189,7 +189,7 @@ class FeedingScheduleCard extends StatelessWidget {
     final now = TimeOfDay.now();
     final hh = _hoursAbbr.of(context);
 
-    return MomriseCard(
+    return FitmamaCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

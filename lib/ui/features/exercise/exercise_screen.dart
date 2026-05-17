@@ -8,7 +8,7 @@ import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/id.dart';
 import '../../../utils/localized.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 enum ExCategory { yoga, stretch, breath, pelvic, walk, posture }
 
@@ -517,7 +517,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
           padding: const EdgeInsets.symmetric(vertical: 12),
           children: [
             if (isC)
-              MomriseCard(
+              FitmamaCard(
                 color: const Color(0xFFFEF3C7),
                 padding: const EdgeInsets.all(12),
                 child: Text(
@@ -545,7 +545,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
               ),
             ),
             const SizedBox(height: 12),
-            MomriseCard(
+            FitmamaCard(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -628,7 +628,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
             const SizedBox(height: 12),
             ...list.map((m) => Padding(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: MomriseCard(
+                  child: FitmamaCard(
                     padding: EdgeInsets.zero,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,

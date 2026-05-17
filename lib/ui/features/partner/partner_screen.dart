@@ -8,8 +8,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../data/repositories/partner_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
-import '../../core/widgets/momrise_card.dart';
-import '../shell/top_bar.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 /// Hosts the [PartnerRepository] for the currently paired mom and
 /// rebuilds when that data changes. If no momUid is paired we fall
@@ -155,11 +154,7 @@ class _PartnerBody extends StatelessWidget {
         DateFormat('EEEE, d MMMM', locale).format(DateTime.now());
 
     return Scaffold(
-      appBar: MomriseTopBar(
-        repository: repository,
-        title: t.partnerTitle,
-        showSettings: false,
-      ),
+      appBar: AppBar(title: Text(t.partnerTitle)),
       body: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 600),
@@ -249,7 +244,7 @@ class _PartnerBody extends StatelessWidget {
               ),
               if (concerns.isNotEmpty) ...[
                 const SizedBox(height: 12),
-                MomriseCard(
+                FitmamaCard(
                   border: Border.all(
                     color: scheme.primary.withValues(alpha: 0.5),
                   ),
@@ -290,7 +285,7 @@ class _PartnerBody extends StatelessWidget {
                 ),
               ],
               const SizedBox(height: 12),
-              MomriseCard(
+              FitmamaCard(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

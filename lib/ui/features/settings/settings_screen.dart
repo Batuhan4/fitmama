@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key, required this.repository});
@@ -138,7 +138,7 @@ class SettingsScreen extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 12),
       children: [
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             children: [
               Row(
@@ -202,7 +202,7 @@ class SettingsScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -280,7 +280,7 @@ class SettingsScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             children: [
               _row(context, Icons.translate, t.setLanguage,
@@ -301,7 +301,7 @@ class SettingsScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           padding: const EdgeInsets.all(14),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -400,7 +400,7 @@ class SettingsScreen extends StatelessWidget {
           Icon(icon, color: scheme.primary, size: 16),
           const SizedBox(width: 10),
           Expanded(child: Text(title, style: const TextStyle(fontSize: 13))),
-          if (trailing != null) trailing,
+          ?trailing,
         ],
       ),
     );

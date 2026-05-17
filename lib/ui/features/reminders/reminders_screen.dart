@@ -4,7 +4,7 @@ import '../../../data/models/reminder_config.dart';
 import '../../../data/repositories/app_repository.dart';
 import '../../../data/services/notification_service.dart';
 import '../../../l10n/generated/app_localizations.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class RemindersScreen extends StatefulWidget {
   const RemindersScreen({super.key, required this.repository});
@@ -77,7 +77,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 12),
       children: [
-        MomriseCard(
+        FitmamaCard(
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -145,7 +145,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
         ...items.map(
           (r) => Padding(
             padding: const EdgeInsets.only(bottom: 10),
-            child: MomriseCard(
+            child: FitmamaCard(
               padding: const EdgeInsets.all(14),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

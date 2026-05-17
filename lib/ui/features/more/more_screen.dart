@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
@@ -26,7 +26,7 @@ class MoreScreen extends StatelessWidget {
         ...items.map(
           (it) => Padding(
             padding: const EdgeInsets.only(bottom: 8),
-            child: MomriseCard(
+            child: FitmamaCard(
               padding: const EdgeInsets.all(14),
               onTap: () => context.push(it.to),
               child: Row(

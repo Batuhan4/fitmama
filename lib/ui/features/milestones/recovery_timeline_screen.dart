@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/localized.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class _RecoveryStage {
   const _RecoveryStage({
@@ -537,7 +537,7 @@ class RecoveryTimelineScreen extends StatelessWidget {
           final isPast = weeks >= s.weekTo;
           return Padding(
             padding: const EdgeInsets.only(bottom: 12),
-            child: MomriseCard(
+            child: FitmamaCard(
               border: isActive
                   ? Border.all(color: scheme.primary, width: 2)
                   : null,

@@ -4,7 +4,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/localized.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 const _glassLabel = L('bardak', 'glass', more: {
   'hi': 'गिलास',

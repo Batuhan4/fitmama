@@ -7,7 +7,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/id.dart';
 import '../../../utils/localized.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class _VideoEx {
   const _VideoEx({
@@ -750,7 +750,7 @@ class _VideosScreenState extends State<VideosScreen> {
               ),
             if (isC && _level >= 2) ...[
               const SizedBox(height: 8),
-              MomriseCard(
+              FitmamaCard(
                 color: const Color(0xFFFEF3C7),
                 padding: const EdgeInsets.all(12),
                 child: Text('⚠ ${t.exCsectionNote}',
@@ -763,7 +763,7 @@ class _VideosScreenState extends State<VideosScreen> {
             const SizedBox(height: 12),
             ...list.map((v) => Padding(
                   padding: const EdgeInsets.only(bottom: 12),
-                  child: MomriseCard(
+                  child: FitmamaCard(
                     padding: EdgeInsets.zero,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,

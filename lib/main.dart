@@ -35,11 +35,11 @@ Future<void> main() async {
   await HomeWidgetService.pushWaterCups(cups);
   await HomeWidgetService.pushKcal(repository.todayKcal());
   final initialRoute = await HomeWidgetService.initialRouteFromWidget();
-  runApp(MomriseApp(repository: repository, initialRoute: initialRoute));
+  runApp(FitmamaApp(repository: repository, initialRoute: initialRoute));
 }
 
-class MomriseApp extends StatefulWidget {
-  const MomriseApp({
+class FitmamaApp extends StatefulWidget {
+  const FitmamaApp({
     super.key,
     required this.repository,
     this.initialRoute,
@@ -49,10 +49,10 @@ class MomriseApp extends StatefulWidget {
   final String? initialRoute;
 
   @override
-  State<MomriseApp> createState() => _MomriseAppState();
+  State<FitmamaApp> createState() => _FitmamaAppState();
 }
 
-class _MomriseAppState extends State<MomriseApp> {
+class _FitmamaAppState extends State<FitmamaApp> {
   late final GoRouter _router;
   StreamSubscription<String>? _widgetTaps;
 
@@ -83,7 +83,7 @@ class _MomriseAppState extends State<MomriseApp> {
       listenable: widget.repository,
       builder: (context, _) {
         return MaterialApp.router(
-          title: 'momrise',
+          title: 'FitMama',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.light(),
           darkTheme: AppTheme.dark(),

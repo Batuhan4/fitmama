@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/localized.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class _Milestone {
   const _Milestone({
@@ -503,7 +503,7 @@ class BabyMilestonesScreen extends StatelessWidget {
           final inWindow = weeks >= m.weekFrom && weeks <= m.weekTo;
           return Padding(
             padding: const EdgeInsets.only(bottom: 10),
-            child: MomriseCard(
+            child: FitmamaCard(
               padding: const EdgeInsets.all(14),
               onTap: () => repository.toggleMilestone(m.id, !isDone),
               child: Row(

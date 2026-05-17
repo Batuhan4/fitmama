@@ -6,7 +6,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/id.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class MoodScreen extends StatefulWidget {
   const MoodScreen({super.key, required this.repository});
@@ -69,7 +69,7 @@ class _MoodScreenState extends State<MoodScreen> {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 12),
       children: [
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -174,7 +174,7 @@ class _MoodScreenState extends State<MoodScreen> {
             ),
           ),
         if (negative) const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

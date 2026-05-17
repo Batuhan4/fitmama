@@ -9,7 +9,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/id.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 import 'feeding_schedule_card.dart';
 
 class FeedingScreen extends StatefulWidget {
@@ -148,7 +148,7 @@ class _FeedingScreenState extends State<FeedingScreen> {
       children: [
         FeedingScheduleCard(repository: widget.repository),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -247,7 +247,7 @@ class _FeedingScreenState extends State<FeedingScreen> {
           ),
         ),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -310,7 +310,7 @@ class _FeedingScreenState extends State<FeedingScreen> {
             style: Theme.of(context).textTheme.titleMedium),
         const SizedBox(height: 8),
         if (entries.isEmpty)
-          MomriseCard(
+          FitmamaCard(
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
@@ -327,7 +327,7 @@ class _FeedingScreenState extends State<FeedingScreen> {
                 : '${_sideLabel(e.side, t)} • ${t.feedMinutes((e.durationSec / 60).round())}';
             return Padding(
               padding: const EdgeInsets.only(bottom: 8),
-              child: MomriseCard(
+              child: FitmamaCard(
                 padding: const EdgeInsets.all(12),
                 child: Row(
                   children: [

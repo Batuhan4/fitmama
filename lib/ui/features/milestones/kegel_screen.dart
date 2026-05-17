@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class KegelScreen extends StatefulWidget {
   const KegelScreen({super.key});
@@ -143,7 +143,7 @@ class _KegelScreenState extends State<KegelScreen> {
           ),
         ),
         const SizedBox(height: 24),
-        MomriseCard(
+        FitmamaCard(
           child: Text(
             '💡 Önerilen: günde 3 set, her sette 10 kasılma.',
             style: TextStyle(

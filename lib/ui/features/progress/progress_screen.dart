@@ -8,7 +8,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/id.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class ProgressScreen extends StatefulWidget {
   const ProgressScreen({super.key, required this.repository});
@@ -126,7 +126,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 12),
       children: [
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -224,7 +224,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
 
   Widget _miniChart(String title, List<FlSpot> spots, String type) {
     final scheme = Theme.of(context).colorScheme;
-    return MomriseCard(
+    return FitmamaCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -255,7 +255,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
   }
 
   Widget _miniBar(String title, List<BarChartGroupData> groups) {
-    return MomriseCard(
+    return FitmamaCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -292,7 +292,7 @@ class _ProPaywall extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 12),
       children: [
-        MomriseCard(
+        FitmamaCard(
           padding: EdgeInsets.zero,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -7,7 +7,7 @@ import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/id.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class SleepScreen extends StatefulWidget {
   const SleepScreen({super.key, required this.repository});
@@ -136,7 +136,7 @@ class _SleepScreenState extends State<SleepScreen>
           ),
         ),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -188,7 +188,7 @@ class _SleepScreenState extends State<SleepScreen>
           ),
         ),
         const SizedBox(height: 12),
-        MomriseCard(
+        FitmamaCard(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -261,7 +261,7 @@ class _SleepScreenState extends State<SleepScreen>
         ),
         const SizedBox(height: 12),
         if (filtered.isEmpty)
-          MomriseCard(
+          FitmamaCard(
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
@@ -275,7 +275,7 @@ class _SleepScreenState extends State<SleepScreen>
           ...filtered.take(20).map((e) {
             return Padding(
               padding: const EdgeInsets.only(bottom: 8),
-              child: MomriseCard(
+              child: FitmamaCard(
                 padding: const EdgeInsets.all(12),
                 child: Row(
                   children: [

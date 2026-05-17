@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
-import '../../core/widgets/momrise_card.dart';
+import '../../core/widgets/fitmama_card.dart';
 
 class BreathingScreen extends StatefulWidget {
   const BreathingScreen({super.key});
@@ -137,7 +137,7 @@ class _BreathingScreenState extends State<BreathingScreen> {
           ),
         ),
         const SizedBox(height: 24),
-        MomriseCard(
+        FitmamaCard(
           child: Text(
             t.breathCalmHint,
             textAlign: TextAlign.center,
