@@ -664,11 +664,11 @@ class _FeaturedRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = const [
-      _Featured('Strong Mama', '45 dk · Orta',
+      _Featured('guclu-anne', 'Güçlü Anne', '45 dk · İleri',
           'assets/images/workouts/kettlebell_squat.jpg'),
-      _Featured('Glute Builder', '40 dk · Orta',
+      _Featured('kalca-gelistirme', 'Kalça Geliştirme', '40 dk · Orta',
           'assets/images/workouts/barbell_hip_thrust.jpg'),
-      _Featured('HIIT Burn', '30 dk · İleri',
+      _Featured('hiit-burn', 'HIIT Burn', '30 dk · İleri',
           'assets/images/workouts/cardio_kick.jpg'),
     ];
     return SizedBox(
@@ -685,7 +685,8 @@ class _FeaturedRow extends StatelessWidget {
 }
 
 class _Featured {
-  const _Featured(this.title, this.meta, this.image);
+  const _Featured(this.id, this.title, this.meta, this.image);
+  final String id;
   final String title;
   final String meta;
   final String image;
@@ -701,7 +702,7 @@ class _FeaturedCard extends StatelessWidget {
       width: 160,
       child: InkWell(
         onTap: () => GoRouter.of(context).push(
-            '/programs/${Uri.encodeComponent(item.title.toLowerCase())}?title=${Uri.encodeComponent(item.title)}'),
+            '/programs/${item.id}?title=${Uri.encodeComponent(item.title)}'),
         borderRadius: BorderRadius.circular(AppTheme.cardRadius),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(AppTheme.cardRadius),

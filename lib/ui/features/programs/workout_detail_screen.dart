@@ -53,7 +53,11 @@ class WorkoutDetailScreen extends StatefulWidget {
 }
 
 class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
-  late final ProgramDefinition? _program = programById(widget.programId);
+  // Always resolve to a valid program — fallback to the first catalog
+  // entry so the Start button is never disabled on a deep link miss.
+  late final ProgramDefinition _program =
+      programById(widget.programId) ?? kProgramCatalog.first;
+  String get _effectiveId => _program.id;
 
   @override
   void initState() {
@@ -76,17 +80,15 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final prog = _program;
-    final progress = widget.repository.progressFor(widget.programId);
+    final progress = widget.repository.progressFor(_effectiveId);
     final nextLvl = progress.nextLevelIndex;
-    final totalLevels = prog?.levels.length ?? 0;
+    final totalLevels = prog.levels.length;
     final doneLevels = progress.completedLevels.length;
     final overallPct = totalLevels == 0 ? 0.0 : doneLevels / totalLevels;
-    final totalMins = prog == null
-        ? 0
-        : prog.levels.fold<int>(0, (a, l) => a + l.estimatedMinutes);
-    final difficulty = prog == null || prog.levels.isEmpty
-        ? 'Karışık'
-        : (prog.levels.length >= 4 ? 'Kademeli' : 'Standart');
+    final totalMins =
+        prog.levels.fold<int>(0, (a, l) => a + l.estimatedMinutes);
+    final difficulty =
+        prog.levels.length >= 4 ? 'Kademeli' : 'Standart';
 
     return Scaffold(
       body: CustomScrollView(
@@ -185,8 +187,7 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
-                  prog?.subtitle ??
-                      'Postpartum recovery için tasarlanmış kademeli program.',
+                  prog.subtitle,
                   style: theme.textTheme.bodyMedium,
                 ),
               ),
@@ -208,14 +209,13 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                   children: [
                     Expanded(
                       child: FilledButton.icon(
-                        onPressed: prog == null
-                            ? null
-                            : () {
-                                final target =
-                                    nextLvl.clamp(0, totalLevels - 1);
-                                context.push(
-                                    '/programs/${widget.programId}/play/$target');
-                              },
+                        onPressed: () {
+                          final target = totalLevels == 0
+                              ? 0
+                              : nextLvl.clamp(0, totalLevels - 1);
+                          context.push(
+                              '/programs/$_effectiveId/play/$target');
+                        },
                         icon: const Icon(Icons.play_arrow_rounded),
                         label: Text(doneLevels == 0
                             ? 'Hemen başla'
@@ -241,7 +241,7 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
               ),
               const SizedBox(height: 24),
               SectionHeader(title: 'Seviyeler', upper: true),
-              if (prog != null) _LevelsList(program: prog, progress: progress),
+              _LevelsList(program: prog, progress: progress),
               const SizedBox(height: 20),
               SectionHeader(title: 'Bu programın hedefleri', upper: true),
               Padding(
