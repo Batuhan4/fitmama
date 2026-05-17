@@ -43,27 +43,29 @@ class HomeWidgetService {
   static bool get _isAndroid =>
       defaultTargetPlatform == TargetPlatform.android;
 
-  /// Maps `momrise://nutrition` style URIs from the widget into GoRouter
-  /// paths. Anything we don't recognise resolves to the dashboard.
+  /// Maps `fitmama://nutrition` (or legacy `momrise://nutrition`) URIs from
+  /// the widget into GoRouter paths. Anything we don't recognise returns null.
   static String? routeFromUri(Uri? uri) {
     if (uri == null) return null;
-    if (uri.scheme != 'momrise') return null;
-    // We use the host segment of the URI (momrise://<host>) as the route
-    // name because Android sees host=nutrition / exercise / etc. Path is
-    // empty for those.
+    if (uri.scheme != 'fitmama' && uri.scheme != 'momrise') return null;
     final host = uri.host;
     switch (host) {
+      case 'home':
       case 'dashboard':
       case '':
-        return '/dashboard';
+        return '/home';
       case 'nutrition':
         return '/nutrition';
+      case 'programs':
       case 'exercise':
-        return '/exercise';
+        return '/programs';
+      case 'stats':
       case 'progress':
-        return '/progress';
+        return '/stats';
+      case 'profile':
+        return '/profile';
       case 'water':
-        return '/nutrition';
+        return '/stats';
       default:
         return null;
     }

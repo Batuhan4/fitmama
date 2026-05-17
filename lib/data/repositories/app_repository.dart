@@ -3,9 +3,11 @@ import 'package:flutter/foundation.dart';
 
 import '../models/exercise_session.dart';
 import '../models/feeding_entry.dart';
+import '../models/fitness_quiz.dart';
 import '../models/meal_entry.dart';
 import '../models/mood_entry.dart';
 import '../models/profile.dart';
+import '../models/program_progress.dart';
 import '../models/reminder_config.dart';
 import '../models/sleep_entry.dart';
 import '../models/user_role.dart';
@@ -72,6 +74,13 @@ class AppRepository extends ChangeNotifier {
   Set<String> _milestones = {};
   Set<String> get milestones => Set.unmodifiable(_milestones);
 
+  Map<String, ProgramProgress> _programProgress = {};
+  Map<String, ProgramProgress> get programProgress =>
+      Map.unmodifiable(_programProgress);
+
+  FitnessQuiz? _fitnessQuiz;
+  FitnessQuiz? get fitnessQuiz => _fitnessQuiz;
+
   void _hydrate() {
     _profile = _storage.readJson(
       StorageKeys.profile,
@@ -105,6 +114,30 @@ class AppRepository extends ChangeNotifier {
     _milestones = milestonesRaw == null
         ? <String>{}
         : milestonesRaw.cast<String>().toSet();
+
+    final progressRaw = _storage.readJson<Map<String, dynamic>>(
+      StorageKeys.programProgress,
+      (dyn) => (dyn as Map<String, dynamic>),
+    );
+    if (progressRaw != null) {
+      _programProgress = progressRaw.map((key, dynVal) {
+        final val = dynVal as Map<String, dynamic>;
+        return MapEntry(key, ProgramProgress.fromJson(val));
+      });
+    } else {
+      _programProgress = {};
+    }
+
+    _fitnessQuiz = _storage.readJson(
+      StorageKeys.fitnessQuiz,
+      (dyn) => FitnessQuiz.fromJson(dyn as Map<String, dynamic>),
+    );
+  }
+
+  Future<void> saveFitnessQuiz(FitnessQuiz quiz) async {
+    _fitnessQuiz = quiz;
+    await _storage.writeJson(StorageKeys.fitnessQuiz, quiz.toJson());
+    notifyListeners();
   }
 
   List<T> _readList<T>(
@@ -146,7 +179,7 @@ class AppRepository extends ChangeNotifier {
   Future<void> setPairCode(String code) async {
     _pairCode = code;
     await _storage.writeString(StorageKeys.pairCode, code);
-    final uid = FirebaseAuth.instance.currentUser?.uid;
+    final uid = _uid;
     if (uid != null && code.isNotEmpty) {
       try {
         await CloudSyncService.instance.publishPairCode(code, uid);
@@ -219,8 +252,17 @@ class AppRepository extends ChangeNotifier {
   }
 
   // ----- Cloud sync helpers -----
-  /// Returns the Firebase Auth UID, or null if user isn't signed in.
-  String? get _uid => FirebaseAuth.instance.currentUser?.uid;
+  /// Returns the Firebase Auth UID, or null if Firebase isn't initialized or
+  /// the user isn't signed in. We swallow Firebase init exceptions so unit
+  /// tests (which don't initialise Firebase) don't crash on every write.
+  String? get _uid {
+    try {
+      return FirebaseAuth.instance.currentUser?.uid;
+    } catch (_) {
+      return null;
+    }
+  }
+
   CloudSyncService get _cloud => CloudSyncService.instance;
 
   void _cloudFire(Future<void> Function(String uid) op) {
@@ -478,6 +520,18 @@ class AppRepository extends ChangeNotifier {
     _pro = true;
     await _storage.writeBool(StorageKeys.pro, true);
 
+    // Demo: pre-fill fitness quiz answers so we skip onboarding flow.
+    final demoQuiz = const FitnessQuiz(
+      primaryGoal: 'tone',
+      phase: 'postpartum_3_6',
+      focusAreas: {'core', 'glute'},
+      weeklyDays: '3_4',
+      location: 'home',
+      completed: true,
+    );
+    _fitnessQuiz = demoQuiz;
+    await _storage.writeJson(StorageKeys.fitnessQuiz, demoQuiz.toJson());
+
     notifyListeners();
   }
 
@@ -501,6 +555,80 @@ class AppRepository extends ChangeNotifier {
   Future<void> _persistReminders() {
     return _persist(StorageKeys.reminders, _reminders);
   }
+
+  // ----- Program progress -----
+  ProgramProgress progressFor(String programId) {
+    return _programProgress[programId] ??
+        ProgramProgress(
+          programId: programId,
+          completedLevels: const <int>{},
+          totalSeconds: 0,
+          xp: 0,
+        );
+  }
+
+  /// Records a completed level — merges into existing progress, adds XP,
+  /// accumulates total active seconds and timestamps it.
+  Future<void> recordLevelCompleted({
+    required String programId,
+    required int levelIndex,
+    required int durationSec,
+    required int xpEarned,
+  }) async {
+    final prev = progressFor(programId);
+    final updated = prev.copyWith(
+      completedLevels: <int>{...prev.completedLevels, levelIndex},
+      totalSeconds: prev.totalSeconds + durationSec,
+      xp: prev.xp + xpEarned,
+      lastDoneAt: DateTime.now().toIso8601String(),
+    );
+    _programProgress = {..._programProgress, programId: updated};
+    await _persistProgramProgress();
+
+    final session = ExerciseSession(
+      id: 'lvl_${programId}_${levelIndex}_${DateTime.now().millisecondsSinceEpoch}',
+      exerciseId: '$programId/level$levelIndex',
+      category: 'program',
+      durationMin: (durationSec / 60).ceil(),
+      doneAt: DateTime.now().toIso8601String(),
+    );
+    _exercises = [session, ..._exercises];
+    await _persist(StorageKeys.exercise, _exercises);
+
+    notifyListeners();
+  }
+
+  Future<void> _persistProgramProgress() {
+    final map = _programProgress.map((k, v) => MapEntry(k, v.toJson()));
+    return _storage.writeJson(StorageKeys.programProgress, map);
+  }
+
+  /// Aggregate XP across all program progress entries.
+  int get totalProgramXp =>
+      _programProgress.values.fold(0, (a, p) => a + p.xp);
+
+  /// Total seconds spent across all completed program levels.
+  int get totalProgramSeconds =>
+      _programProgress.values.fold(0, (a, p) => a + p.totalSeconds);
+
+  /// Total number of program-level completions.
+  int get totalLevelCompletions =>
+      _programProgress.values.fold(0, (a, p) => a + p.completedLevels.length);
+
+  /// User XP level — pure derivation: 1000 XP per level.
+  int get userLevel {
+    final base = 7000; // starting demo XP
+    final total = base + totalProgramXp;
+    return (total / 1000).floor();
+  }
+
+  int get xpInCurrentLevel {
+    final base = 7000;
+    final total = base + totalProgramXp;
+    return total - userLevel * 1000;
+  }
+
+  int get xpToNextLevel => 1000 - xpInCurrentLevel;
 
   // ----- Milestones -----
   Future<void> toggleMilestone(String id, bool done) async {

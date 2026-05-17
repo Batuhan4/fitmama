@@ -18,6 +18,8 @@ class StorageKeys {
   static const pro = 'mama_pro';
   static const language = 'mama_lang';
   static const milestones = 'mama_milestones';
+  static const programProgress = 'mama_program_progress';
+  static const fitnessQuiz = 'mama_fitness_quiz';
 
   static const all = <String>[
     profile,
@@ -35,6 +37,8 @@ class StorageKeys {
     pro,
     language,
     milestones,
+    programProgress,
+    fitnessQuiz,
   ];
 }
 
