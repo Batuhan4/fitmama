@@ -59,6 +59,14 @@ class ProfileScreen extends StatelessWidget {
                 (repository.userLevel + 1) * 1000,
           ),
         ),
+        const SizedBox(height: 12),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: _PremiumCard(
+            isPro: repository.pro,
+            onTap: () => context.push('/pricing'),
+          ),
+        ),
         const SizedBox(height: 16),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -701,4 +709,78 @@ class _Badge {
   final String name;
   final IconData icon;
   final List<Color> gradient;
+}
+
+class _PremiumCard extends StatelessWidget {
+  const _PremiumCard({required this.isPro, required this.onTap});
+  final bool isPro;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(AppTheme.cardRadius),
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppTheme.cardRadius),
+          gradient: const LinearGradient(
+            colors: [AppPalette.primary, AppPalette.accentPurple],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: AppPalette.primary.withValues(alpha: 0.25),
+              blurRadius: 14,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                color: Colors.white.withValues(alpha: 0.22),
+              ),
+              alignment: Alignment.center,
+              child: const Icon(Icons.workspace_premium_rounded,
+                  color: Colors.white, size: 26),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    isPro ? 'Premium Üye' : 'FitMama Premium',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 15,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    isPro
+                        ? 'Tüm özellikler aktif. Aboneliği yönet.'
+                        : '7 gün ücretsiz dene · Aylık 165 TL\'den başlar',
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.9),
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Icon(Icons.arrow_forward_rounded, color: Colors.white),
+          ],
+        ),
+      ),
+    );
+  }
 }

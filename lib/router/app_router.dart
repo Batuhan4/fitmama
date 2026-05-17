@@ -27,6 +27,7 @@ import '../ui/features/nutrition/shopping_list_screen.dart';
 import '../ui/features/onboarding/fitness_quiz_screen.dart';
 import '../ui/features/onboarding/onboarding_screen.dart';
 import '../ui/features/partner/partner_screen.dart';
+import '../ui/features/pricing/pricing_screen.dart';
 import '../ui/features/profile/goals_screen.dart';
 import '../ui/features/profile/profile_screen.dart';
 import '../ui/features/programs/programs_list_screen.dart';
@@ -284,6 +285,10 @@ GoRouter buildRouter(AppRepository repository, {String? initialLocation}) {
       GoRoute(
         path: '/profile/goals',
         builder: (_, _) => const GoalsScreen(),
+      ),
+      GoRoute(
+        path: '/pricing',
+        builder: (_, _) => PricingScreen(repository: repository),
       ),
       GoRoute(
         path: '/notifications',
