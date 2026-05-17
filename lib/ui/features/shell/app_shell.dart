@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
+import '../../core/widgets/chatbot_bubble.dart';
 import 'top_bar.dart';
 
 class AppShellScaffold extends StatelessWidget {
@@ -43,15 +44,17 @@ class AppShellScaffold extends StatelessWidget {
         title: _titleFor(location, t),
         showSettings: showSettings,
       ),
-      body: SafeArea(
-        top: false,
-        bottom: false,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 600),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: child,
+      body: ChatbotOverlay(
+        child: SafeArea(
+          top: false,
+          bottom: false,
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 600),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: child,
+              ),
             ),
           ),
         ),
