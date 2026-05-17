@@ -1,14 +1,14 @@
 flutter_launcher_icons:
   android: "ic_launcher"
   ios: true
-  image_path: "assets/branding/momrise_logo_square.png"
+  image_path: "assets/branding/fitmama_logo_square_new.png"
   remove_alpha_ios: true
   background_color_ios: "#FFFFFF"
-  adaptive_icon_background: "#FBEFF2"
-  adaptive_icon_foreground: "assets/branding/momrise_logo_square.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/branding/fitmama_logo_square_new.png"
   min_sdk_android: 21
   web:
     generate: true
-    image_path: "assets/branding/momrise_logo_square.png"
-    background_color: "#FBEFF2"
-    theme_color: "#A063C8"
+    image_path: "assets/branding/fitmama_logo_square_new.png"
+    background_color: "#FFFFFF"
+    theme_color: "#FF2E7E"

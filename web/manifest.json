@@ -1,11 +1,11 @@
 {
-    "name": "momrise",
-    "short_name": "momrise",
+    "name": "FitMama",
+    "short_name": "FitMama",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#FBEFF2",
-    "theme_color": "#A063C8",
-    "description": "Postpartum support companion for new mothers",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FF2E7E",
+    "description": "FitMama — kadına özel postpartum fitness & wellness companion",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
