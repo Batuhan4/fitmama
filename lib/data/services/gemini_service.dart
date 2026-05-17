@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 const String kGeminiApiKey = String.fromEnvironment('GEMINI_API_KEY',
     defaultValue: 'AIzaSyBcUSdAVM7_loRQeEhtRVwZcpFCxUxUl2s');
 
-const String _model = 'gemini-2.5-flash';
+const String _model = 'gemma-4-26b-a4b-it';
 const String _endpoint =
     'https://generativelanguage.googleapis.com/v1beta/models/$_model:generateContent';
 
@@ -61,8 +61,7 @@ class GeminiService {
       'generationConfig': {
         'temperature': 0.8,
         'topP': 0.95,
-        'maxOutputTokens': 600,
-        'thinkingConfig': {'thinkingBudget': 0},
+        'maxOutputTokens': 1024,
       },
       'safetySettings': const [
         {
@@ -96,8 +95,14 @@ class GeminiService {
       final content = candidates.first['content'] as Map<String, dynamic>?;
       final parts = content?['parts'] as List?;
       if (parts == null || parts.isEmpty) return _errorFallback(languageCode);
-      final text = parts.first['text'] as String? ?? '';
-      return text.trim().isEmpty ? _errorFallback(languageCode) : text.trim();
+      // Gemma models stream thinking traces as parts with `thought: true`;
+      // join only the real response parts.
+      final text = parts
+          .where((p) => p is Map && p['thought'] != true)
+          .map((p) => (p as Map)['text'] as String? ?? '')
+          .join()
+          .trim();
+      return text.isEmpty ? _errorFallback(languageCode) : text;
     } catch (_) {
       return _errorFallback(languageCode);
     }
