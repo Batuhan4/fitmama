@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "631904183951",
+    "project_id": "momrise-cca9c",
+    "storage_bucket": "momrise-cca9c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631904183951:android:0d3e740a6504d6902432fa",
+        "android_client_info": {
+          "package_name": "com.momrise.momrise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631904183951-s8atc12rasfqg7f1evuo2afifpa92omm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.momrise.momrise",
+            "certificate_hash": "97b8120b08e70ec2f59e0667c17959eb08a204f2"
+          }
+        },
+        {
+          "client_id": "631904183951-biujagmeoon55bjesblaj3m5qqvej7vn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO7_KB-5PiBXnctSrDMyZMbJkw3p1Pjqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631904183951-biujagmeoon55bjesblaj3m5qqvej7vn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "631904183951-hqnh8ta7j76dk7coais43tr2dkn0t24o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.momrise.momrise"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
