@@ -147,6 +147,394 @@ class AppLocalizationsFr extends AppLocalizations {
   String get navVideos => 'Vidéos';
 
   @override
+  String get tabHome => 'Ana Sayfa';
+
+  @override
+  String get tabPrograms => 'Programlar';
+
+  @override
+  String get tabNutrition => 'Beslenme';
+
+  @override
+  String get tabStats => 'İstatistikler';
+
+  @override
+  String get tabProfile => 'Profil';
+
+  @override
+  String get homeWelcomeBack => 'Tekrar hoş geldin';
+
+  @override
+  String get homeMotivationToday => 'Bugün kendin için küçük bir adım at.';
+
+  @override
+  String get homeDiscoverFitness => 'Fitness & Pilates';
+
+  @override
+  String get homeDiscoverFitnessSub => 'Her seviye için antrenmanlar';
+
+  @override
+  String get homeDiscoverNutrition => 'Sağlıklı Beslenme';
+
+  @override
+  String get homeDiscoverNutritionSub =>
+      'Sağlıklı alışkanlıklar, lezzetli tarifler';
+
+  @override
+  String get homeDiscoverTips => 'Sağlık Tüyoları';
+
+  @override
+  String get homeDiscoverTipsSub => 'Pelvik sağlık, rutinler ve daha fazlası';
+
+  @override
+  String get homeDiscoverExplore => 'Keşfet';
+
+  @override
+  String get homeRoutineSuggestions => 'Rutinine eklemek isteyebileceklerin';
+
+  @override
+  String get homeNewPrograms => 'Yeni çıkan programlar';
+
+  @override
+  String get homeInviteTitle => 'Arkadaşını davet et, birbirinizi teşvik edin!';
+
+  @override
+  String get homeInviteBody =>
+      'İlerleyen versiyonlarda arkadaşlarınla antrenmanlarını, beslenme alışkanlıklarını ve gelişimini takip edebileceksin.';
+
+  @override
+  String get homeInviteCta => 'Arkadaşını davet et';
+
+  @override
+  String get homeFavorites => 'Favorilerin';
+
+  @override
+  String get homeFavoriteRecipes => 'Favori tarifler';
+
+  @override
+  String get homeFavoriteRecipesSub => 'Kayıtlı sağlıklı tariflerini gör';
+
+  @override
+  String get homeFavoriteWorkouts => 'Favori workoutlar';
+
+  @override
+  String get homeFavoriteWorkoutsSub =>
+      'Kayıtlı programlarını ve rutinlerini gör';
+
+  @override
+  String get homeCommunityIntro => 'Bizimle tanış';
+
+  @override
+  String get homeCommunitySub =>
+      'Topluluğumuza katıl ve yolculuğumuzu takip et!';
+
+  @override
+  String get homeStories => 'FitMama hikayeleri';
+
+  @override
+  String get homeAllStories => 'Tüm hikayeler';
+
+  @override
+  String get homeViewAll => 'Tümünü gör';
+
+  @override
+  String get homeNewBadge => 'YENİ';
+
+  @override
+  String get progLocationTitle => 'Nerede antrenman yapmak istersin?';
+
+  @override
+  String get progLocationHome => 'Evde';
+
+  @override
+  String get progLocationHomeSub => 'Ekipmansız, etkili antrenmanlar';
+
+  @override
+  String get progLocationGym => 'Salonda';
+
+  @override
+  String get progLocationGymSub => 'Ağırlık ve makine odaklı antrenmanlar';
+
+  @override
+  String get progLocationOutdoor => 'Dışarıda';
+
+  @override
+  String get progLocationOutdoorSub =>
+      'Yürüyüş, koşu ve açık hava aktiviteleri';
+
+  @override
+  String get progContinueTitle => 'Kaldığın yerden devam et';
+
+  @override
+  String get progContinue => 'Devam et';
+
+  @override
+  String get progCategories => 'Kategoriler';
+
+  @override
+  String get progCategoryRegion => 'Bölgesel';
+
+  @override
+  String get progCategoryGoal => 'Hedefsel';
+
+  @override
+  String get progCategoryType => 'Antrenman türü';
+
+  @override
+  String get progCategoryLevel => 'Seviye';
+
+  @override
+  String get progFeatured => 'Öne çıkan programlar';
+
+  @override
+  String get progAiTitle => 'Sana özel öneriler';
+
+  @override
+  String get progAiSub =>
+      'Enerji seviyene ve hedeflerine göre bugün senin için önerilenler.';
+
+  @override
+  String get progAiCta => 'Önerileri gör';
+
+  @override
+  String get nutTabAll => 'Tüm tarifler';
+
+  @override
+  String get nutTabAirfryer => 'Airfryer tarifleri';
+
+  @override
+  String get nutTabDessert => 'Fit tatlı tarifleri';
+
+  @override
+  String get nutTabOther => 'Fit diğer tarifleri';
+
+  @override
+  String get nutPopular => 'Popüler tarifler';
+
+  @override
+  String get nutWeekPlan => 'Haftalık yemek planlaması';
+
+  @override
+  String get nutWeekPlanSub => 'Planla, pişir, zaman kazan!';
+
+  @override
+  String get nutMealBreakfast => 'Kahvaltı';
+
+  @override
+  String get nutMealLunch => 'Öğle yemeği';
+
+  @override
+  String get nutMealDinner => 'Akşam yemeği';
+
+  @override
+  String get nutMealSnack => 'Ara öğün';
+
+  @override
+  String get nutEditPlan => 'Planı düzenle';
+
+  @override
+  String get nutMoreTitle => 'Daha fazlası';
+
+  @override
+  String get nutShoppingList => 'Alışveriş listesi';
+
+  @override
+  String get nutShoppingListSub => 'İhtiyacın olan tüm malzemeleri listele.';
+
+  @override
+  String get nutBlog => 'Blog yazıları';
+
+  @override
+  String get nutBlogSub =>
+      'Beslenme, spor ve kadın sağlığı üzerine faydalı yazılar.';
+
+  @override
+  String get nutNutrients => 'Besin değerlerini keşfet';
+
+  @override
+  String get nutFavorites => 'Favori tariflerim';
+
+  @override
+  String get nutPerServing => 'Değerler 1 porsiyon içindir.';
+
+  @override
+  String get statsTitle => 'İstatistikler';
+
+  @override
+  String get statsSubtitle => 'Kendini her geçen gün daha iyiye taşı!';
+
+  @override
+  String get statsRangeWeek => 'Hafta';
+
+  @override
+  String get statsRangeMonth => 'Ay';
+
+  @override
+  String get statsRange3Month => '3 Ay';
+
+  @override
+  String get statsRangeYear => 'Yıl';
+
+  @override
+  String get statsKpiCalories => 'Toplam Kalori';
+
+  @override
+  String get statsKpiTime => 'Toplam Süre';
+
+  @override
+  String get statsKpiWorkouts => 'Antrenman';
+
+  @override
+  String get statsKpiActiveDays => 'Aktif Gün';
+
+  @override
+  String get statsSeans => 'seans';
+
+  @override
+  String get statsGun => 'gün';
+
+  @override
+  String get statsMuscleTitle => 'Çalıştırılan bölgeler';
+
+  @override
+  String get statsMuscleDetail => 'Detaylı görünüm';
+
+  @override
+  String get statsMuscleHip => 'Kalça';
+
+  @override
+  String get statsMuscleLegFront => 'Bacak (Ön)';
+
+  @override
+  String get statsMuscleLegBack => 'Bacak (Arka)';
+
+  @override
+  String get statsMuscleCore => 'Karın (Core)';
+
+  @override
+  String get statsMuscleBack => 'Sırt';
+
+  @override
+  String get statsMuscleShoulder => 'Omuz';
+
+  @override
+  String get statsLevelGreat => 'Çok İyi';
+
+  @override
+  String get statsLevelGood => 'İyi';
+
+  @override
+  String get statsLevelOk => 'Orta';
+
+  @override
+  String get statsLevelStart => 'Başlangıç';
+
+  @override
+  String get statsExtraTitle => 'Ekstra çalışman gereken bölgeler';
+
+  @override
+  String get statsExtraCta => 'Önerilen programlara göz at';
+
+  @override
+  String get statsDistribution => 'Bölgeye göre dağılım';
+
+  @override
+  String get statsTotalWork => 'Toplam çalışma';
+
+  @override
+  String get statsPerformance => 'Performans grafikleri';
+
+  @override
+  String get statsDetailedAnalysis => 'Detaylı analiz';
+
+  @override
+  String get statsWater => 'Su tüketimi';
+
+  @override
+  String get statsWaterGoal => 'Hedef: 2.5 L';
+
+  @override
+  String get statsNutritionSummary => 'Beslenme özeti';
+
+  @override
+  String get statsDailyAvg => 'Günlük ortalama';
+
+  @override
+  String get statsProtein => 'Protein';
+
+  @override
+  String get statsCarb => 'Karbonhidrat';
+
+  @override
+  String get statsFat => 'Yağ';
+
+  @override
+  String get statsMacro => 'Makro dağılımı';
+
+  @override
+  String get statsCalorieDistribution => 'Kalori dağılımı';
+
+  @override
+  String get statsAvgHeart => 'Ortalama kalp atış';
+
+  @override
+  String get profileTitle => 'Profilim';
+
+  @override
+  String get profileWorkouts => 'Antrenman';
+
+  @override
+  String get profileWeeksWithFitmama => 'FitMama\'da hafta';
+
+  @override
+  String get profileAchievements => 'Başarımlar';
+
+  @override
+  String get profileMyProgress => 'Gelişimim';
+
+  @override
+  String get profileFocusAreas => 'Odak alanları';
+
+  @override
+  String get profileMamaTools => 'Mama araçları';
+
+  @override
+  String get profileMamaToolsSub => 'Anne-bebek günlük takip ekranları';
+
+  @override
+  String get profileToolFeeding => 'Beslenme logları';
+
+  @override
+  String get profileToolSleep => 'Uyku takibi';
+
+  @override
+  String get profileToolMood => 'Mood günlüğü';
+
+  @override
+  String get profileToolMilestones => 'Bebek gelişim adımları';
+
+  @override
+  String get profileToolRecovery => 'Recovery zaman çizelgesi';
+
+  @override
+  String get profileToolKegel => 'Kegel egzersizleri';
+
+  @override
+  String get profileToolPartner => 'Partner yönetimi';
+
+  @override
+  String get profileToolReminders => 'Hatırlatıcılar';
+
+  @override
+  String get profileToolBreathing => 'Nefes egzersizi';
+
+  @override
+  String get profileToolCommunity => 'Topluluk';
+
+  @override
+  String get profileToolVideos => 'Videolar';
+
+  @override
   String get onbWelcomeTitle => 'Bienvenue, maman';
 
   @override

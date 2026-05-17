@@ -137,13 +137,13 @@ abstract class AppLocalizations {
   /// No description provided for @appName.
   ///
   /// In tr, this message translates to:
-  /// **'momrise'**
+  /// **'FitMama'**
   String get appName;
 
   /// No description provided for @appTagline.
   ///
   /// In tr, this message translates to:
-  /// **'Doğum sonrası yolculuğunda yanındayım'**
+  /// **'Doğumdan sonra daha güçlü'**
   String get appTagline;
 
   /// No description provided for @welcomeTitle.
@@ -385,6 +385,768 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Videolar'**
   String get navVideos;
+
+  /// No description provided for @tabHome.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ana Sayfa'**
+  String get tabHome;
+
+  /// No description provided for @tabPrograms.
+  ///
+  /// In tr, this message translates to:
+  /// **'Programlar'**
+  String get tabPrograms;
+
+  /// No description provided for @tabNutrition.
+  ///
+  /// In tr, this message translates to:
+  /// **'Beslenme'**
+  String get tabNutrition;
+
+  /// No description provided for @tabStats.
+  ///
+  /// In tr, this message translates to:
+  /// **'İstatistikler'**
+  String get tabStats;
+
+  /// No description provided for @tabProfile.
+  ///
+  /// In tr, this message translates to:
+  /// **'Profil'**
+  String get tabProfile;
+
+  /// No description provided for @homeWelcomeBack.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar hoş geldin'**
+  String get homeWelcomeBack;
+
+  /// No description provided for @homeMotivationToday.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün kendin için küçük bir adım at.'**
+  String get homeMotivationToday;
+
+  /// No description provided for @homeDiscoverFitness.
+  ///
+  /// In tr, this message translates to:
+  /// **'Fitness & Pilates'**
+  String get homeDiscoverFitness;
+
+  /// No description provided for @homeDiscoverFitnessSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Her seviye için antrenmanlar'**
+  String get homeDiscoverFitnessSub;
+
+  /// No description provided for @homeDiscoverNutrition.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sağlıklı Beslenme'**
+  String get homeDiscoverNutrition;
+
+  /// No description provided for @homeDiscoverNutritionSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sağlıklı alışkanlıklar, lezzetli tarifler'**
+  String get homeDiscoverNutritionSub;
+
+  /// No description provided for @homeDiscoverTips.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sağlık Tüyoları'**
+  String get homeDiscoverTips;
+
+  /// No description provided for @homeDiscoverTipsSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Pelvik sağlık, rutinler ve daha fazlası'**
+  String get homeDiscoverTipsSub;
+
+  /// No description provided for @homeDiscoverExplore.
+  ///
+  /// In tr, this message translates to:
+  /// **'Keşfet'**
+  String get homeDiscoverExplore;
+
+  /// No description provided for @homeRoutineSuggestions.
+  ///
+  /// In tr, this message translates to:
+  /// **'Rutinine eklemek isteyebileceklerin'**
+  String get homeRoutineSuggestions;
+
+  /// No description provided for @homeNewPrograms.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni çıkan programlar'**
+  String get homeNewPrograms;
+
+  /// No description provided for @homeInviteTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Arkadaşını davet et, birbirinizi teşvik edin!'**
+  String get homeInviteTitle;
+
+  /// No description provided for @homeInviteBody.
+  ///
+  /// In tr, this message translates to:
+  /// **'İlerleyen versiyonlarda arkadaşlarınla antrenmanlarını, beslenme alışkanlıklarını ve gelişimini takip edebileceksin.'**
+  String get homeInviteBody;
+
+  /// No description provided for @homeInviteCta.
+  ///
+  /// In tr, this message translates to:
+  /// **'Arkadaşını davet et'**
+  String get homeInviteCta;
+
+  /// No description provided for @homeFavorites.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favorilerin'**
+  String get homeFavorites;
+
+  /// No description provided for @homeFavoriteRecipes.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favori tarifler'**
+  String get homeFavoriteRecipes;
+
+  /// No description provided for @homeFavoriteRecipesSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kayıtlı sağlıklı tariflerini gör'**
+  String get homeFavoriteRecipesSub;
+
+  /// No description provided for @homeFavoriteWorkouts.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favori workoutlar'**
+  String get homeFavoriteWorkouts;
+
+  /// No description provided for @homeFavoriteWorkoutsSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kayıtlı programlarını ve rutinlerini gör'**
+  String get homeFavoriteWorkoutsSub;
+
+  /// No description provided for @homeCommunityIntro.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bizimle tanış'**
+  String get homeCommunityIntro;
+
+  /// No description provided for @homeCommunitySub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Topluluğumuza katıl ve yolculuğumuzu takip et!'**
+  String get homeCommunitySub;
+
+  /// No description provided for @homeStories.
+  ///
+  /// In tr, this message translates to:
+  /// **'FitMama hikayeleri'**
+  String get homeStories;
+
+  /// No description provided for @homeAllStories.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm hikayeler'**
+  String get homeAllStories;
+
+  /// No description provided for @homeViewAll.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tümünü gör'**
+  String get homeViewAll;
+
+  /// No description provided for @homeNewBadge.
+  ///
+  /// In tr, this message translates to:
+  /// **'YENİ'**
+  String get homeNewBadge;
+
+  /// No description provided for @progLocationTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Nerede antrenman yapmak istersin?'**
+  String get progLocationTitle;
+
+  /// No description provided for @progLocationHome.
+  ///
+  /// In tr, this message translates to:
+  /// **'Evde'**
+  String get progLocationHome;
+
+  /// No description provided for @progLocationHomeSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ekipmansız, etkili antrenmanlar'**
+  String get progLocationHomeSub;
+
+  /// No description provided for @progLocationGym.
+  ///
+  /// In tr, this message translates to:
+  /// **'Salonda'**
+  String get progLocationGym;
+
+  /// No description provided for @progLocationGymSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ağırlık ve makine odaklı antrenmanlar'**
+  String get progLocationGymSub;
+
+  /// No description provided for @progLocationOutdoor.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dışarıda'**
+  String get progLocationOutdoor;
+
+  /// No description provided for @progLocationOutdoorSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yürüyüş, koşu ve açık hava aktiviteleri'**
+  String get progLocationOutdoorSub;
+
+  /// No description provided for @progContinueTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaldığın yerden devam et'**
+  String get progContinueTitle;
+
+  /// No description provided for @progContinue.
+  ///
+  /// In tr, this message translates to:
+  /// **'Devam et'**
+  String get progContinue;
+
+  /// No description provided for @progCategories.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kategoriler'**
+  String get progCategories;
+
+  /// No description provided for @progCategoryRegion.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bölgesel'**
+  String get progCategoryRegion;
+
+  /// No description provided for @progCategoryGoal.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hedefsel'**
+  String get progCategoryGoal;
+
+  /// No description provided for @progCategoryType.
+  ///
+  /// In tr, this message translates to:
+  /// **'Antrenman türü'**
+  String get progCategoryType;
+
+  /// No description provided for @progCategoryLevel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye'**
+  String get progCategoryLevel;
+
+  /// No description provided for @progFeatured.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öne çıkan programlar'**
+  String get progFeatured;
+
+  /// No description provided for @progAiTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sana özel öneriler'**
+  String get progAiTitle;
+
+  /// No description provided for @progAiSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Enerji seviyene ve hedeflerine göre bugün senin için önerilenler.'**
+  String get progAiSub;
+
+  /// No description provided for @progAiCta.
+  ///
+  /// In tr, this message translates to:
+  /// **'Önerileri gör'**
+  String get progAiCta;
+
+  /// No description provided for @nutTabAll.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm tarifler'**
+  String get nutTabAll;
+
+  /// No description provided for @nutTabAirfryer.
+  ///
+  /// In tr, this message translates to:
+  /// **'Airfryer tarifleri'**
+  String get nutTabAirfryer;
+
+  /// No description provided for @nutTabDessert.
+  ///
+  /// In tr, this message translates to:
+  /// **'Fit tatlı tarifleri'**
+  String get nutTabDessert;
+
+  /// No description provided for @nutTabOther.
+  ///
+  /// In tr, this message translates to:
+  /// **'Fit diğer tarifleri'**
+  String get nutTabOther;
+
+  /// No description provided for @nutPopular.
+  ///
+  /// In tr, this message translates to:
+  /// **'Popüler tarifler'**
+  String get nutPopular;
+
+  /// No description provided for @nutWeekPlan.
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık yemek planlaması'**
+  String get nutWeekPlan;
+
+  /// No description provided for @nutWeekPlanSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Planla, pişir, zaman kazan!'**
+  String get nutWeekPlanSub;
+
+  /// No description provided for @nutMealBreakfast.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kahvaltı'**
+  String get nutMealBreakfast;
+
+  /// No description provided for @nutMealLunch.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğle yemeği'**
+  String get nutMealLunch;
+
+  /// No description provided for @nutMealDinner.
+  ///
+  /// In tr, this message translates to:
+  /// **'Akşam yemeği'**
+  String get nutMealDinner;
+
+  /// No description provided for @nutMealSnack.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ara öğün'**
+  String get nutMealSnack;
+
+  /// No description provided for @nutEditPlan.
+  ///
+  /// In tr, this message translates to:
+  /// **'Planı düzenle'**
+  String get nutEditPlan;
+
+  /// No description provided for @nutMoreTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Daha fazlası'**
+  String get nutMoreTitle;
+
+  /// No description provided for @nutShoppingList.
+  ///
+  /// In tr, this message translates to:
+  /// **'Alışveriş listesi'**
+  String get nutShoppingList;
+
+  /// No description provided for @nutShoppingListSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'İhtiyacın olan tüm malzemeleri listele.'**
+  String get nutShoppingListSub;
+
+  /// No description provided for @nutBlog.
+  ///
+  /// In tr, this message translates to:
+  /// **'Blog yazıları'**
+  String get nutBlog;
+
+  /// No description provided for @nutBlogSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Beslenme, spor ve kadın sağlığı üzerine faydalı yazılar.'**
+  String get nutBlogSub;
+
+  /// No description provided for @nutNutrients.
+  ///
+  /// In tr, this message translates to:
+  /// **'Besin değerlerini keşfet'**
+  String get nutNutrients;
+
+  /// No description provided for @nutFavorites.
+  ///
+  /// In tr, this message translates to:
+  /// **'Favori tariflerim'**
+  String get nutFavorites;
+
+  /// No description provided for @nutPerServing.
+  ///
+  /// In tr, this message translates to:
+  /// **'Değerler 1 porsiyon içindir.'**
+  String get nutPerServing;
+
+  /// No description provided for @statsTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'İstatistikler'**
+  String get statsTitle;
+
+  /// No description provided for @statsSubtitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kendini her geçen gün daha iyiye taşı!'**
+  String get statsSubtitle;
+
+  /// No description provided for @statsRangeWeek.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hafta'**
+  String get statsRangeWeek;
+
+  /// No description provided for @statsRangeMonth.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ay'**
+  String get statsRangeMonth;
+
+  /// No description provided for @statsRange3Month.
+  ///
+  /// In tr, this message translates to:
+  /// **'3 Ay'**
+  String get statsRange3Month;
+
+  /// No description provided for @statsRangeYear.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yıl'**
+  String get statsRangeYear;
+
+  /// No description provided for @statsKpiCalories.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Kalori'**
+  String get statsKpiCalories;
+
+  /// No description provided for @statsKpiTime.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Süre'**
+  String get statsKpiTime;
+
+  /// No description provided for @statsKpiWorkouts.
+  ///
+  /// In tr, this message translates to:
+  /// **'Antrenman'**
+  String get statsKpiWorkouts;
+
+  /// No description provided for @statsKpiActiveDays.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aktif Gün'**
+  String get statsKpiActiveDays;
+
+  /// No description provided for @statsSeans.
+  ///
+  /// In tr, this message translates to:
+  /// **'seans'**
+  String get statsSeans;
+
+  /// No description provided for @statsGun.
+  ///
+  /// In tr, this message translates to:
+  /// **'gün'**
+  String get statsGun;
+
+  /// No description provided for @statsMuscleTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Çalıştırılan bölgeler'**
+  String get statsMuscleTitle;
+
+  /// No description provided for @statsMuscleDetail.
+  ///
+  /// In tr, this message translates to:
+  /// **'Detaylı görünüm'**
+  String get statsMuscleDetail;
+
+  /// No description provided for @statsMuscleHip.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kalça'**
+  String get statsMuscleHip;
+
+  /// No description provided for @statsMuscleLegFront.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bacak (Ön)'**
+  String get statsMuscleLegFront;
+
+  /// No description provided for @statsMuscleLegBack.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bacak (Arka)'**
+  String get statsMuscleLegBack;
+
+  /// No description provided for @statsMuscleCore.
+  ///
+  /// In tr, this message translates to:
+  /// **'Karın (Core)'**
+  String get statsMuscleCore;
+
+  /// No description provided for @statsMuscleBack.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sırt'**
+  String get statsMuscleBack;
+
+  /// No description provided for @statsMuscleShoulder.
+  ///
+  /// In tr, this message translates to:
+  /// **'Omuz'**
+  String get statsMuscleShoulder;
+
+  /// No description provided for @statsLevelGreat.
+  ///
+  /// In tr, this message translates to:
+  /// **'Çok İyi'**
+  String get statsLevelGreat;
+
+  /// No description provided for @statsLevelGood.
+  ///
+  /// In tr, this message translates to:
+  /// **'İyi'**
+  String get statsLevelGood;
+
+  /// No description provided for @statsLevelOk.
+  ///
+  /// In tr, this message translates to:
+  /// **'Orta'**
+  String get statsLevelOk;
+
+  /// No description provided for @statsLevelStart.
+  ///
+  /// In tr, this message translates to:
+  /// **'Başlangıç'**
+  String get statsLevelStart;
+
+  /// No description provided for @statsExtraTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ekstra çalışman gereken bölgeler'**
+  String get statsExtraTitle;
+
+  /// No description provided for @statsExtraCta.
+  ///
+  /// In tr, this message translates to:
+  /// **'Önerilen programlara göz at'**
+  String get statsExtraCta;
+
+  /// No description provided for @statsDistribution.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bölgeye göre dağılım'**
+  String get statsDistribution;
+
+  /// No description provided for @statsTotalWork.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam çalışma'**
+  String get statsTotalWork;
+
+  /// No description provided for @statsPerformance.
+  ///
+  /// In tr, this message translates to:
+  /// **'Performans grafikleri'**
+  String get statsPerformance;
+
+  /// No description provided for @statsDetailedAnalysis.
+  ///
+  /// In tr, this message translates to:
+  /// **'Detaylı analiz'**
+  String get statsDetailedAnalysis;
+
+  /// No description provided for @statsWater.
+  ///
+  /// In tr, this message translates to:
+  /// **'Su tüketimi'**
+  String get statsWater;
+
+  /// No description provided for @statsWaterGoal.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hedef: 2.5 L'**
+  String get statsWaterGoal;
+
+  /// No description provided for @statsNutritionSummary.
+  ///
+  /// In tr, this message translates to:
+  /// **'Beslenme özeti'**
+  String get statsNutritionSummary;
+
+  /// No description provided for @statsDailyAvg.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük ortalama'**
+  String get statsDailyAvg;
+
+  /// No description provided for @statsProtein.
+  ///
+  /// In tr, this message translates to:
+  /// **'Protein'**
+  String get statsProtein;
+
+  /// No description provided for @statsCarb.
+  ///
+  /// In tr, this message translates to:
+  /// **'Karbonhidrat'**
+  String get statsCarb;
+
+  /// No description provided for @statsFat.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yağ'**
+  String get statsFat;
+
+  /// No description provided for @statsMacro.
+  ///
+  /// In tr, this message translates to:
+  /// **'Makro dağılımı'**
+  String get statsMacro;
+
+  /// No description provided for @statsCalorieDistribution.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kalori dağılımı'**
+  String get statsCalorieDistribution;
+
+  /// No description provided for @statsAvgHeart.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ortalama kalp atış'**
+  String get statsAvgHeart;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Profilim'**
+  String get profileTitle;
+
+  /// No description provided for @profileWorkouts.
+  ///
+  /// In tr, this message translates to:
+  /// **'Antrenman'**
+  String get profileWorkouts;
+
+  /// No description provided for @profileWeeksWithFitmama.
+  ///
+  /// In tr, this message translates to:
+  /// **'FitMama\'da hafta'**
+  String get profileWeeksWithFitmama;
+
+  /// No description provided for @profileAchievements.
+  ///
+  /// In tr, this message translates to:
+  /// **'Başarımlar'**
+  String get profileAchievements;
+
+  /// No description provided for @profileMyProgress.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gelişimim'**
+  String get profileMyProgress;
+
+  /// No description provided for @profileFocusAreas.
+  ///
+  /// In tr, this message translates to:
+  /// **'Odak alanları'**
+  String get profileFocusAreas;
+
+  /// No description provided for @profileMamaTools.
+  ///
+  /// In tr, this message translates to:
+  /// **'Mama araçları'**
+  String get profileMamaTools;
+
+  /// No description provided for @profileMamaToolsSub.
+  ///
+  /// In tr, this message translates to:
+  /// **'Anne-bebek günlük takip ekranları'**
+  String get profileMamaToolsSub;
+
+  /// No description provided for @profileToolFeeding.
+  ///
+  /// In tr, this message translates to:
+  /// **'Beslenme logları'**
+  String get profileToolFeeding;
+
+  /// No description provided for @profileToolSleep.
+  ///
+  /// In tr, this message translates to:
+  /// **'Uyku takibi'**
+  String get profileToolSleep;
+
+  /// No description provided for @profileToolMood.
+  ///
+  /// In tr, this message translates to:
+  /// **'Mood günlüğü'**
+  String get profileToolMood;
+
+  /// No description provided for @profileToolMilestones.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bebek gelişim adımları'**
+  String get profileToolMilestones;
+
+  /// No description provided for @profileToolRecovery.
+  ///
+  /// In tr, this message translates to:
+  /// **'Recovery zaman çizelgesi'**
+  String get profileToolRecovery;
+
+  /// No description provided for @profileToolKegel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kegel egzersizleri'**
+  String get profileToolKegel;
+
+  /// No description provided for @profileToolPartner.
+  ///
+  /// In tr, this message translates to:
+  /// **'Partner yönetimi'**
+  String get profileToolPartner;
+
+  /// No description provided for @profileToolReminders.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hatırlatıcılar'**
+  String get profileToolReminders;
+
+  /// No description provided for @profileToolBreathing.
+  ///
+  /// In tr, this message translates to:
+  /// **'Nefes egzersizi'**
+  String get profileToolBreathing;
+
+  /// No description provided for @profileToolCommunity.
+  ///
+  /// In tr, this message translates to:
+  /// **'Topluluk'**
+  String get profileToolCommunity;
+
+  /// No description provided for @profileToolVideos.
+  ///
+  /// In tr, this message translates to:
+  /// **'Videolar'**
+  String get profileToolVideos;
 
   /// No description provided for @onbWelcomeTitle.
   ///
@@ -1553,7 +2315,7 @@ abstract class AppLocalizations {
   /// No description provided for @proBadge.
   ///
   /// In tr, this message translates to:
-  /// **'momrise Pro'**
+  /// **'FitMama Pro'**
   String get proBadge;
 
   /// No description provided for @proTitle.

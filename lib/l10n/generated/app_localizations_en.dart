@@ -9,10 +9,10 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appName => 'momrise';
+  String get appName => 'FitMama';
 
   @override
-  String get appTagline => 'By your side after birth';
+  String get appTagline => 'Stronger after birth';
 
   @override
   String get welcomeTitle => 'Welcome';
@@ -141,6 +141,392 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get navVideos => 'Videos';
+
+  @override
+  String get tabHome => 'Home';
+
+  @override
+  String get tabPrograms => 'Programs';
+
+  @override
+  String get tabNutrition => 'Nutrition';
+
+  @override
+  String get tabStats => 'Stats';
+
+  @override
+  String get tabProfile => 'Profile';
+
+  @override
+  String get homeWelcomeBack => 'Welcome back';
+
+  @override
+  String get homeMotivationToday => 'Take a small step for yourself today.';
+
+  @override
+  String get homeDiscoverFitness => 'Fitness & Pilates';
+
+  @override
+  String get homeDiscoverFitnessSub => 'Workouts for every level';
+
+  @override
+  String get homeDiscoverNutrition => 'Healthy Nutrition';
+
+  @override
+  String get homeDiscoverNutritionSub => 'Healthy habits, tasty recipes';
+
+  @override
+  String get homeDiscoverTips => 'Wellness Tips';
+
+  @override
+  String get homeDiscoverTipsSub => 'Pelvic health, routines and more';
+
+  @override
+  String get homeDiscoverExplore => 'Explore';
+
+  @override
+  String get homeRoutineSuggestions => 'You might add to your routine';
+
+  @override
+  String get homeNewPrograms => 'New programs';
+
+  @override
+  String get homeInviteTitle => 'Invite a friend, motivate each other!';
+
+  @override
+  String get homeInviteBody =>
+      'In upcoming versions you\'ll be able to follow your friends\' workouts, nutrition habits and progress.';
+
+  @override
+  String get homeInviteCta => 'Invite a friend';
+
+  @override
+  String get homeFavorites => 'Favorites';
+
+  @override
+  String get homeFavoriteRecipes => 'Favorite recipes';
+
+  @override
+  String get homeFavoriteRecipesSub => 'Browse your saved healthy recipes';
+
+  @override
+  String get homeFavoriteWorkouts => 'Favorite workouts';
+
+  @override
+  String get homeFavoriteWorkoutsSub =>
+      'Browse your saved programs and routines';
+
+  @override
+  String get homeCommunityIntro => 'Meet us';
+
+  @override
+  String get homeCommunitySub => 'Join our community and follow the journey!';
+
+  @override
+  String get homeStories => 'FitMama stories';
+
+  @override
+  String get homeAllStories => 'All stories';
+
+  @override
+  String get homeViewAll => 'See all';
+
+  @override
+  String get homeNewBadge => 'NEW';
+
+  @override
+  String get progLocationTitle => 'Where do you want to train?';
+
+  @override
+  String get progLocationHome => 'At home';
+
+  @override
+  String get progLocationHomeSub => 'Equipment-free, effective workouts';
+
+  @override
+  String get progLocationGym => 'At the gym';
+
+  @override
+  String get progLocationGymSub => 'Weights and machine-focused workouts';
+
+  @override
+  String get progLocationOutdoor => 'Outdoors';
+
+  @override
+  String get progLocationOutdoorSub =>
+      'Walking, running and outdoor activities';
+
+  @override
+  String get progContinueTitle => 'Pick up where you left off';
+
+  @override
+  String get progContinue => 'Continue';
+
+  @override
+  String get progCategories => 'Categories';
+
+  @override
+  String get progCategoryRegion => 'By region';
+
+  @override
+  String get progCategoryGoal => 'By goal';
+
+  @override
+  String get progCategoryType => 'Workout type';
+
+  @override
+  String get progCategoryLevel => 'Level';
+
+  @override
+  String get progFeatured => 'Featured programs';
+
+  @override
+  String get progAiTitle => 'Personalized recommendations';
+
+  @override
+  String get progAiSub =>
+      'Based on your energy level and goals, here\'s what\'s right for today.';
+
+  @override
+  String get progAiCta => 'See recommendations';
+
+  @override
+  String get nutTabAll => 'All recipes';
+
+  @override
+  String get nutTabAirfryer => 'Airfryer recipes';
+
+  @override
+  String get nutTabDessert => 'Fit dessert recipes';
+
+  @override
+  String get nutTabOther => 'Fit other recipes';
+
+  @override
+  String get nutPopular => 'Popular recipes';
+
+  @override
+  String get nutWeekPlan => 'Weekly meal planning';
+
+  @override
+  String get nutWeekPlanSub => 'Plan, cook, save time!';
+
+  @override
+  String get nutMealBreakfast => 'Breakfast';
+
+  @override
+  String get nutMealLunch => 'Lunch';
+
+  @override
+  String get nutMealDinner => 'Dinner';
+
+  @override
+  String get nutMealSnack => 'Snack';
+
+  @override
+  String get nutEditPlan => 'Edit plan';
+
+  @override
+  String get nutMoreTitle => 'More';
+
+  @override
+  String get nutShoppingList => 'Shopping list';
+
+  @override
+  String get nutShoppingListSub => 'List all the ingredients you need.';
+
+  @override
+  String get nutBlog => 'Blog posts';
+
+  @override
+  String get nutBlogSub =>
+      'Useful articles on nutrition, fitness and women\'s health.';
+
+  @override
+  String get nutNutrients => 'Discover nutritional values';
+
+  @override
+  String get nutFavorites => 'My favorite recipes';
+
+  @override
+  String get nutPerServing => 'Values are per serving.';
+
+  @override
+  String get statsTitle => 'Stats';
+
+  @override
+  String get statsSubtitle => 'Lift yourself a little higher every day!';
+
+  @override
+  String get statsRangeWeek => 'Week';
+
+  @override
+  String get statsRangeMonth => 'Month';
+
+  @override
+  String get statsRange3Month => '3 Mo';
+
+  @override
+  String get statsRangeYear => 'Year';
+
+  @override
+  String get statsKpiCalories => 'Total Calories';
+
+  @override
+  String get statsKpiTime => 'Total Time';
+
+  @override
+  String get statsKpiWorkouts => 'Workouts';
+
+  @override
+  String get statsKpiActiveDays => 'Active Days';
+
+  @override
+  String get statsSeans => 'sessions';
+
+  @override
+  String get statsGun => 'days';
+
+  @override
+  String get statsMuscleTitle => 'Muscles worked';
+
+  @override
+  String get statsMuscleDetail => 'Detailed view';
+
+  @override
+  String get statsMuscleHip => 'Hip';
+
+  @override
+  String get statsMuscleLegFront => 'Leg (Front)';
+
+  @override
+  String get statsMuscleLegBack => 'Leg (Back)';
+
+  @override
+  String get statsMuscleCore => 'Core';
+
+  @override
+  String get statsMuscleBack => 'Back';
+
+  @override
+  String get statsMuscleShoulder => 'Shoulder';
+
+  @override
+  String get statsLevelGreat => 'Great';
+
+  @override
+  String get statsLevelGood => 'Good';
+
+  @override
+  String get statsLevelOk => 'Okay';
+
+  @override
+  String get statsLevelStart => 'Starter';
+
+  @override
+  String get statsExtraTitle => 'Areas to work more on';
+
+  @override
+  String get statsExtraCta => 'Browse suggested programs';
+
+  @override
+  String get statsDistribution => 'Distribution by region';
+
+  @override
+  String get statsTotalWork => 'Total work';
+
+  @override
+  String get statsPerformance => 'Performance charts';
+
+  @override
+  String get statsDetailedAnalysis => 'Detailed analysis';
+
+  @override
+  String get statsWater => 'Water intake';
+
+  @override
+  String get statsWaterGoal => 'Goal: 2.5 L';
+
+  @override
+  String get statsNutritionSummary => 'Nutrition summary';
+
+  @override
+  String get statsDailyAvg => 'Daily average';
+
+  @override
+  String get statsProtein => 'Protein';
+
+  @override
+  String get statsCarb => 'Carbs';
+
+  @override
+  String get statsFat => 'Fat';
+
+  @override
+  String get statsMacro => 'Macro distribution';
+
+  @override
+  String get statsCalorieDistribution => 'Calorie distribution';
+
+  @override
+  String get statsAvgHeart => 'Avg. heart rate';
+
+  @override
+  String get profileTitle => 'My Profile';
+
+  @override
+  String get profileWorkouts => 'Workouts';
+
+  @override
+  String get profileWeeksWithFitmama => 'Weeks with FitMama';
+
+  @override
+  String get profileAchievements => 'Achievements';
+
+  @override
+  String get profileMyProgress => 'My progress';
+
+  @override
+  String get profileFocusAreas => 'Focus areas';
+
+  @override
+  String get profileMamaTools => 'Mama tools';
+
+  @override
+  String get profileMamaToolsSub => 'Mother & baby tracking screens';
+
+  @override
+  String get profileToolFeeding => 'Feeding logs';
+
+  @override
+  String get profileToolSleep => 'Sleep tracking';
+
+  @override
+  String get profileToolMood => 'Mood journal';
+
+  @override
+  String get profileToolMilestones => 'Baby milestones';
+
+  @override
+  String get profileToolRecovery => 'Recovery timeline';
+
+  @override
+  String get profileToolKegel => 'Kegel exercises';
+
+  @override
+  String get profileToolPartner => 'Partner management';
+
+  @override
+  String get profileToolReminders => 'Reminders';
+
+  @override
+  String get profileToolBreathing => 'Breathing exercise';
+
+  @override
+  String get profileToolCommunity => 'Community';
+
+  @override
+  String get profileToolVideos => 'Videos';
 
   @override
   String get onbWelcomeTitle => 'Welcome, mama';
@@ -753,7 +1139,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vidOpenInYoutube => 'Open in YouTube';
 
   @override
-  String get proBadge => 'momrise Pro';
+  String get proBadge => 'FitMama Pro';
 
   @override
   String get proTitle => 'Detailed progress analytics';
