@@ -607,6 +607,19 @@ class AppRepository extends ChangeNotifier {
   int get totalProgramXp =>
       _programProgress.values.fold(0, (a, p) => a + p.xp);
 
+  /// The most-recently-touched program id (for Continue Card etc.).
+  /// Falls back to the first progress entry, or null if nothing started.
+  String? get lastProgramId {
+    if (_programProgress.isEmpty) return null;
+    final sorted = _programProgress.values.toList()
+      ..sort((a, b) {
+        final ad = a.lastDoneAt ?? '';
+        final bd = b.lastDoneAt ?? '';
+        return bd.compareTo(ad);
+      });
+    return sorted.first.programId;
+  }
+
   /// Total seconds spent across all completed program levels.
   int get totalProgramSeconds =>
       _programProgress.values.fold(0, (a, p) => a + p.totalSeconds);

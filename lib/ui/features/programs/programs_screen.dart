@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../data/models/program_catalog.dart';
 import '../../../data/repositories/app_repository.dart';
 import '../../../l10n/generated/app_localizations.dart';
 import '../../core/theme/app_theme.dart';
@@ -376,118 +377,135 @@ class _ContinueCard extends StatelessWidget {
     final t = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 4, right: 4, bottom: 12),
-          child: Row(
-            children: [
-              Expanded(
-                  child: Text(t.progContinueTitle.toUpperCase(),
-                      style: theme.textTheme.labelLarge?.copyWith(
-                        letterSpacing: 0.8,
-                        fontWeight: FontWeight.w700,
-                      ))),
-              InkWell(
-                onTap: () => context.push('/programs/list'),
-                borderRadius: BorderRadius.circular(8),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 6, vertical: 4),
-                  child: Text(t.homeViewAll,
-                      style: TextStyle(
-                          color: scheme.primary,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 13)),
-                ),
-              ),
-            ],
-          ),
-        ),
-        FitmamaCard(
-          padding: const EdgeInsets.all(12),
-          onTap: () => context.push(
-              '/programs/core-recovery?title=Core%20Recovery'),
-          child: Row(
-            children: [
-              Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  gradient: LinearGradient(
-                    colors: [
-                      AppPalette.primary.withValues(alpha: 0.4),
-                      AppPalette.accentPurple.withValues(alpha: 0.4),
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+    // Pick the most-recent program with progress, else first catalog entry.
+    final lastId = repository.lastProgramId ?? kProgramCatalog.first.id;
+    final prog = programById(lastId) ?? kProgramCatalog.first;
+    final progress = repository.progressFor(prog.id);
+    final totalLevels = prog.levels.length;
+    final doneLevels = progress.completedLevels.length;
+    final nextLvl =
+        progress.nextLevelIndex.clamp(0, totalLevels - 1);
+    final pct = totalLevels == 0 ? 0.0 : doneLevels / totalLevels;
+    final mins = prog.levels[nextLvl].estimatedMinutes;
+    return ListenableBuilder(
+      listenable: repository,
+      builder: (_, _) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 4, right: 4, bottom: 12),
+            child: Row(
+              children: [
+                Expanded(
+                    child: Text(t.progContinueTitle.toUpperCase(),
+                        style: theme.textTheme.labelLarge?.copyWith(
+                          letterSpacing: 0.8,
+                          fontWeight: FontWeight.w700,
+                        ))),
+                InkWell(
+                  onTap: () => context.push('/programs/list'),
+                  borderRadius: BorderRadius.circular(8),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 6, vertical: 4),
+                    child: Text(t.homeViewAll,
+                        style: TextStyle(
+                            color: scheme.primary,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 13)),
                   ),
                 ),
-                child: const Icon(Icons.self_improvement_rounded,
-                    size: 38, color: Colors.white),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Core Recovery',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700, fontSize: 16)),
-                    const SizedBox(height: 4),
-                    Text('Seviye 2 · 20/30 dakika',
-                        style: theme.textTheme.bodySmall),
-                    const SizedBox(height: 10),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 6,
-                          decoration: BoxDecoration(
-                            color: AppPalette.primary.withValues(alpha: 0.18),
-                            borderRadius: BorderRadius.circular(99),
-                          ),
-                        ),
-                        FractionallySizedBox(
-                          widthFactor: 0.65,
-                          child: Container(
+              ],
+            ),
+          ),
+          FitmamaCard(
+            padding: const EdgeInsets.all(12),
+            onTap: () => context.push(
+                '/programs/${prog.id}?title=${Uri.encodeComponent(prog.title)}'),
+            child: Row(
+              children: [
+                Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    gradient: LinearGradient(
+                      colors: [
+                        AppPalette.primary.withValues(alpha: 0.4),
+                        AppPalette.accentPurple.withValues(alpha: 0.4),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  child: const Icon(Icons.self_improvement_rounded,
+                      size: 38, color: Colors.white),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(prog.title,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 16)),
+                      const SizedBox(height: 4),
+                      Text(
+                          'Seviye ${nextLvl + 1} · ~$mins dk',
+                          style: theme.textTheme.bodySmall),
+                      const SizedBox(height: 10),
+                      Stack(
+                        children: [
+                          Container(
                             height: 6,
                             decoration: BoxDecoration(
-                              color: AppPalette.primary,
+                              color: AppPalette.primary.withValues(alpha: 0.18),
                               borderRadius: BorderRadius.circular(99),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('%65 tamamlandı',
-                            style: theme.textTheme.bodySmall),
-                        FilledButton(
-                          onPressed: () => context.push(
-                              '/programs/core-recovery?title=Core%20Recovery'),
-                          style: FilledButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 18, vertical: 8),
-                            minimumSize: const Size(0, 36),
-                            textStyle: const TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.w700),
+                          FractionallySizedBox(
+                            widthFactor: pct.clamp(0.0, 1.0),
+                            child: Container(
+                              height: 6,
+                              decoration: BoxDecoration(
+                                color: AppPalette.primary,
+                                borderRadius: BorderRadius.circular(99),
+                              ),
+                            ),
                           ),
-                          child: Text(t.progContinue),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('%${(pct * 100).round()} tamamlandı',
+                              style: theme.textTheme.bodySmall),
+                          FilledButton(
+                            onPressed: () => context.push(
+                                '/programs/${prog.id}/play/$nextLvl'),
+                            style: FilledButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 18, vertical: 8),
+                              minimumSize: const Size(0, 36),
+                              textStyle: const TextStyle(
+                                  fontSize: 13, fontWeight: FontWeight.w700),
+                            ),
+                            child: Text(
+                                doneLevels == 0
+                                    ? 'Başla'
+                                    : t.progContinue),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
