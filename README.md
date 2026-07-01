@@ -1,37 +1,49 @@
 # FitMama
 
-Kadına özel postpartum fitness & wellness companion (Flutter, TR/EN).
+FitMama is a mobile postpartum fitness and wellness app built with Flutter for iOS and Android.
 
-## Stack
+It helps mothers track recovery-friendly routines, nutrition, hydration, mood, sleep, feeding, milestones, reminders, and progress in one calm mobile experience.
 
-- Flutter 3.41 / Dart 3.11
-- `go_router` (ShellRoute + redirect)
-- `shared_preferences` + `AppRepository extends ChangeNotifier`
-- `fl_chart`, `google_fonts` (Inter), `intl`, `uuid`
-- `flutter_localizations` + ARB (`lib/l10n/app_tr.arb`, `app_en.arb`)
-- Firebase (auth, Firestore) — opsiyonel cloud sync
+## Mobile app focus
 
-## Hızlı başla
+- Built with Flutter for Android and iOS
+- Bottom-tab mobile navigation
+- Postpartum-friendly fitness and wellness flows
+- Local-first app data with optional Firebase sync
+- Multi-language UI powered by Flutter localization
+
+## Demo
+
+<video src="https://github.com/Batuhan4/fitmama/raw/main/assets/demo/fitmama-demo.mp4" controls width="320"></video>
+
+If the preview does not render, open `assets/demo/fitmama-demo.mp4`.
+
+## Tech stack
+
+- Flutter / Dart
+- Material 3
+- `go_router`
+- `shared_preferences`
+- Firebase Auth and Firestore for optional cloud sync
+- Flutter localizations with ARB files
+
+## Run locally
 
 ```bash
 flutter pub get
-flutter run            # bağlı cihazda
-flutter test           # tüm testler
-flutter analyze        # lint
-flutter build apk --debug
-flutter build web --debug
+flutter run
+flutter test
+flutter analyze
 ```
 
-## Mimari
+## Project structure
 
-- `lib/data/models/*` — plain Dart data classes (fromJson/toJson)
-- `lib/data/services/storage_service.dart` — SharedPreferences wrapper
-- `lib/data/repositories/app_repository.dart` — single source of truth (ChangeNotifier)
-- `lib/ui/features/<feature>/` — feature ekranları
-- `lib/ui/features/shell/app_shell.dart` — 5-tab bottom-nav Scaffold
-- `lib/router/app_router.dart` — `buildRouter(repository)` → `GoRouter`
-- `lib/ui/core/theme/app_theme.dart` — FitMama tema (light + dark, Material 3)
-
-## Tasarım kaynağı
-
-`docs/superpowers/specs/2026-05-17-fitmama-rebrand-design.md` — marka, tema token'ları, 5-tab IA, feature mapping, bileşen listesi.
+```text
+lib/data/       Data models, services, and repositories
+lib/router/     App routing
+lib/ui/         Mobile screens, shell navigation, and theme
+lib/l10n/       Localization files
+assets/         Branding, images, and fonts
+android/        Android app project
+ios/            iOS app project
+```
