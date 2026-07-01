@@ -4,6 +4,14 @@ FitMama is a mobile postpartum fitness and wellness app built with Flutter for i
 
 It helps mothers track recovery-friendly routines, nutrition, hydration, mood, sleep, feeding, milestones, reminders, and progress in one calm mobile experience.
 
+## Demo
+
+[![Watch the FitMama mobile app demo](assets/branding/fitmama_logo_square_new.png)](assets/demo/fitmama-demo.mp4)
+
+▶️ **Click/tap the preview to watch the FitMama mobile app demo.**
+
+Direct video link: [assets/demo/fitmama-demo.mp4](assets/demo/fitmama-demo.mp4)
+
 ## Mobile app focus
 
 - Built with Flutter for Android and iOS
@@ -11,12 +19,6 @@ It helps mothers track recovery-friendly routines, nutrition, hydration, mood, s
 - Postpartum-friendly fitness and wellness flows
 - Local-first app data with optional Firebase sync
 - Multi-language UI powered by Flutter localization
-
-## Demo
-
-<video src="https://github.com/Batuhan4/fitmama/raw/main/assets/demo/fitmama-demo.mp4" controls width="320"></video>
-
-If the preview does not render, open `assets/demo/fitmama-demo.mp4`.
 
 ## Tech stack
 
